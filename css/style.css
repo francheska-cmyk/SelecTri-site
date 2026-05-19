@@ -95,6 +95,7 @@ header{
     width: 100%;
     height: auto ;
     position: sticky;  
+    z-index: 1; /*permet d'éviter d'avoir le contenu qui passe au-dessus du header*/
     background-color: var(--selc-bg-color);
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     top : 0;
@@ -291,10 +292,18 @@ background-color: var(--selc-bg-btnCTA);
 
 
 /*=======================================================SECTION- Comment ça marche=====================================================*/
-.blc-info {
+.bloc {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.6rem;
+    padding: 1.6rem;
+}
+
+.blc-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     gap: 1.6rem;
     padding: 1.6rem;
 }
@@ -320,19 +329,70 @@ background-color: var(--selc-bg-btnCTA);
     gap: 1.6rem;
 }
 
+/*=======================================================SECTION- Défi=========================================================*/
+.info-defi {
+    align-items: flex-start;
+
+}
+
+/*=======================================================SECTION- MEDIATHEQUE=========================================================*/
 
 
+/*=======================================================SECTION- IMPACT=========================================================*/
+.impact{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
 
+
+    /* align-content: center;
+    justify-content: space-between; */
+}
+
+.impact .card-article{
+    margin: 0.5rem 0.8rem;
+}
 
 
 /*===================================================================FOOTER==========================================================*/
+footer{
+    padding: 0.5em;
+    margin-top: 1em;
+    /* margin-left: 1em;
+    margin-right: 1em; */
+    width: 100%;
+    /* min-height: 100vh; pour avoir footer tjrs en bas. mias ne fonctionne pas avec mon site */
+    background-color: rgb(74, 95, 105, 0.2);
+    border-top: solid 1px rgb(74, 95, 105);
+    display: flex;
+    justify-content: space-between;
+}
 
+footer nav{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+} 
 
+footer nav ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    gap : 10px;
+}
 
-
-
-
-
+footer nav li{
+    align-self: center;
+    text-align: center;
+    color: var(--selc-text-color);
+    font-family: "poppins",sans-serif;
+    font-size: 1rem; /* 1rem = 16px par défaut pour ts nav, 1.125=18px. rem : relatif taille de base du nav. mais devient 1.8rem avec modif HTML*/
+}
 
 
 /*===================================================================RESPONSIVE==========================================================*/

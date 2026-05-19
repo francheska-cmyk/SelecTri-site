@@ -1,0 +1,355 @@
+/*ATTENTION CURSOR : POINTER NE FONCTIONNE PLUS A COORIGER*/
+/*Vérifier si l'unité REM peut être utilisé pour les height et width*/
+
+
+
+
+:root{
+    --selc-bg-color:#fafaf7;
+    --selc-bg-card:#FFFFFF;
+    --selc-brd-card:#09632A;
+    --selc-text-color:#0A0A0A;
+    --selc-linked-color:#4A5769;
+    --selc-link-color:#10569C;
+    --selc-bg-btnCTA:#4ADE80;
+    --selc-brd-btnCTA:#09632A;
+    --selc-bg-btnSEC:#F97316;
+    --selc-brd-btnSEC:#0A0A0A;
+    --selc-bg-btnTER:#4A5769;
+    --selc-brd-btnTER:#0A0A0A;
+    --selc-tri-color : rgba(9,99,42, 0.2);
+    --selc-depot-color:rgba(249, 115, 22, 0.2);
+    --selc-repair-color :rgba(251, 192, 45, 0.2);
+    --selc-media-color: rgba(13, 148, 136, 0.2);
+    --selc-defi-color:rgba(168, 85, 247, 0.2);
+}
+
+/*==== CSS de BASE====*/
+html{
+    font-size: 62.5%; /*62.5% de 16px =10px*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    background-color: var(--selc-bg-color);
+    color: var(--selc-text-color);
+    font-family:"Inter",sans-serif;
+    font-size: 1.4rem; /*14px ÷ 16px = 0.875rem car 1rem=16px mais avec 62.5% sur html ça devient 1.4rem*/
+}
+
+main{
+    margin: 1rem;
+}
+
+h1, h2, h3, h4{
+    font-family: "poppins", sans-serif;
+}
+h1{
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.8rem;
+}
+h3{
+    font-size:1.6rem;
+    font-weight: lighter;
+}
+
+/* a{
+    color: var(--selc-link-color);
+    text-decoration: none;
+}
+
+a:visited{
+    color:var(--selc-linked-color);
+} */
+
+.btn-principal {
+    background-color: var(--selc-bg-btnCTA);
+    border: solid var(--selc-brd-btnCTA) 1.5px; /*pour éviter l'effet rebond au passage du hover si gagne 1px de chaque côté risque d'avoir grand décalage*/
+    border-radius : 40px;
+    padding: 0.5rem 0.8rem; /*5px et 8px*/
+    color: var(--selc-text-color);
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.btn-principal:hover{
+    box-shadow: 0 4px 12px rgba(9, 99, 42, 0.3);
+    cursor: pointer; /*bonne pratique pour signaler un élément cliquable*/
+    border: solid 2px var(--selc-brd-btnCTA);
+}
+
+
+/*==================================================================== HEADER=====================================================*/ 
+header{
+    padding: 0.5em;
+    margin-bottom: 1em;
+    /* margin-left: 1em;
+    margin-right: 1em; */
+    width: 100%;
+    height: auto ;
+    position: sticky;  
+    background-color: var(--selc-bg-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    top : 0;
+}
+
+.header-nav{
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height : 4rem; /*standard pour un logo 40, mais trop petit pour le mien*/
+    width: auto;  /*logo en SVG donc adaptatation facile à la largeur de l'écran*/
+}
+.logo-selec{
+    font-size: 2rem;
+    font-weight: bold;
+    color:#1E293B ;
+    font-family: "poppins", sans-serif;
+}
+.logo-tri{
+    font-size: 2rem;
+    font-weight: bold;
+    color:#10853B ;
+    font-family: "poppins", sans-serif;
+}
+
+/*=================================HEADER version mobile===============================*/
+.btn-menu{
+    display: block;
+}
+
+#header-btn{
+    display: none;
+}
+
+
+
+/*===================================HEADER version Destop=============================*/
+.header-nav ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    gap : 30px;
+    display: none;
+}
+
+.header-nav li{
+    align-self: center;
+    text-align: center;
+    color: var(--selc-text-color);
+    font-family: "poppins",sans-serif;
+    font-size: 1.6rem; /* 1rem = 16px par défaut pour ts nav, 1.125=18px. rem : relatif taille de base du nav. mais devient 1.8rem avec modif HTML*/
+    padding: 0.8rem 1rem; /*permet d'éviter que le background color hover soit très serré sur le texte, pour aérer*/
+}
+
+nav a{ 
+    color: var(--selc-text-color);
+    text-decoration: none;
+}
+
+/*pour le changement de couleur au survol*/
+.nav-tri:hover{
+    background-color:var(--selc-tri-color);
+    border-radius:8px;
+}
+
+.nav-depot:hover{
+    background-color:var(--selc-depot-color);
+    border-radius:8px;
+}
+
+.nav-repair:hover{
+    background-color:var(--selc-repair-color);
+    border-radius:8px;
+}
+
+.nav-media:hover{
+    background-color:var(--selc-media-color);
+    border-radius:8px;
+}
+
+.nav-defi:hover{
+    background-color:var(--selc-defi-color);
+    border-radius:8px;
+}
+
+
+/*====================================================================== HERO ==========================================================*/ 
+.hero-card{
+    background-color: var(--selc-bg-card);
+    padding:1.6rem;
+    margin:1.6rem;
+    border: solid 1px var(--selc-brd-card);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    text-align: center;
+}
+/* .hero-card h1{
+    font-size:2rem ;
+    font-family: "poppins", sans-serif;
+} */
+
+/*================================HERO- barre de recherche===================*/
+.hero-search, .btn-scan{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    border: none;
+    border-radius: 50px;
+    width : 80%;
+    min-height: 4rem; /*pour éviter débordement contenu*/
+    gap : 0.8rem;
+    padding: 0.1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    background: transparent; /*retire le fond blanc de l'input*/;
+}
+
+.btn-scan{
+background-color: var(--selc-bg-btnCTA);
+}
+
+.hero-search{
+    background-color: rgb(240, 239, 239);
+    padding-left:0.8rem;
+}
+
+.hero-search input{
+    border : none; 
+    outline: none; /*ajouter outline en plus de border pour être sur que la bordure n'apparait pas au survol*/
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    background: transparent; /*retire le fond blanc de l'input*/;
+    text-align: center;
+}
+
+.hero-search .btn-search{
+    background: none; /*retirer color par défaut de l'image*/
+    border : none;
+    border-radius: 50px;
+    background-color: var(--selc-bg-btnCTA);
+    cursor: pointer;
+    padding: 0.1rem;
+    min-height: 4rem ;
+}
+
+.btn-search img, .btn-scan img {
+    width: 2.4rem;
+    height: 2.4rem; /*24px, valeur de base pris svt pour icone */
+}
+
+/*================================HERO-leafi=========================*/
+.hero {
+    position: relative;
+}
+
+.hero-leafi {
+    bottom: 0;
+    margin-right: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+}
+
+.hero-leafi img {
+    width: 4rem;
+    height: auto;
+}
+
+.hero-leafi p {
+    /* background-color: var(--selc-bg-card);
+    border: 1px solid var(--selc-brd-card);
+    border-radius: 16px; */
+    padding: 0.5rem 0.8rem;
+    font-size: 1.2rem;
+}
+
+
+/*=======================================================SECTION- Comment ça marche=====================================================*/
+.blc-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 1.6rem;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 1.6rem;
+    width: 100%;
+}
+
+.card-article {
+    background-color: var(--selc-bg-card);
+    padding: 1.6rem;
+    border: solid 1px var(--selc-brd-card);
+    border-radius: 25px;
+    display: flex;
+    flex : 1; /*chaque carte prend une par égale, meme largeur*/
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1.6rem;
+}
+
+
+
+
+
+
+/*===================================================================FOOTER==========================================================*/
+
+
+
+
+
+
+
+
+
+/*===================================================================RESPONSIVE==========================================================*/
+@media (min-width: 768px) {
+    .btn-menu {
+        display: none;
+    }
+
+    .btn-user{
+        display: none;
+    }
+
+    .header-nav ul {
+        display: flex;
+    }
+
+    #header-btn{
+        display: block;
+    }
+}

@@ -2,8 +2,6 @@
 /*Vérifier si l'unité REM peut être utilisé pour les height et width*/
 
 
-
-
 :root{
     --selc-bg-color:#fafaf7;
     --selc-bg-card:#FFFFFF;
@@ -35,11 +33,14 @@ html{
     box-sizing: border-box; 
 }
 
-body{
+.page-layout{
     background-color: var(--selc-bg-color);
     color: var(--selc-text-color);
     font-family:"Inter",sans-serif;
     font-size: 1.4rem; /*14px ÷ 16px = 0.875rem car 1rem=16px mais avec 62.5% sur html ça devient 1.4rem*/
+    display: flex;
+    flex-direction: column;
+    gap:24px ;
 }
 
 main{
@@ -51,9 +52,11 @@ h1, h2, h3, h4{
 }
 h1{
     font-size: 2rem;
+    font-weight: bolder;
 }
 h2{
     font-size: 1.8rem;
+    font-weight: bold;
 }
 h3{
     font-size:1.6rem;
@@ -73,11 +76,13 @@ a:visited{
     background-color: var(--selc-bg-btnCTA);
     border: solid var(--selc-brd-btnCTA) 1.5px; /*pour éviter l'effet rebond au passage du hover si gagne 1px de chaque côté risque d'avoir grand décalage*/
     border-radius : 40px;
-    padding: 0.5rem 0.8rem; /*5px et 8px*/
+    padding: 1rem 2rem; /*10px et 20px*/
     color: var(--selc-text-color);
     font-family: "Inter", sans-serif;
     font-size: 1.6rem;
     font-weight: 500;
+    width: auto;
+    height: auto;
 }
 .btn-principal:hover{
     box-shadow: 0 4px 12px rgba(9, 99, 42, 0.3);
@@ -104,7 +109,8 @@ header{
 .header-nav{
     display: flex;
     justify-content: space-around;
-    margin: auto;
+    align-items: center;
+    margin: 1em;
     width: 100%;
     height: 100%;
     padding: 0.5em;
@@ -198,7 +204,8 @@ nav a{
 .hero-card{
     background-color: var(--selc-bg-card);
     padding:1.6rem;
-    margin:1.6rem;
+    /* margin:1.6rem; */
+    margin-bottom: 2.5rem;
     border: solid 1px var(--selc-brd-card);
     border-radius: 25px;
     display: flex;
@@ -206,11 +213,8 @@ nav a{
     gap: 1rem;
     justify-content: space-around;
     text-align: center;
+    box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
 }
-/* .hero-card h1{
-    font-size:2rem ;
-    font-family: "poppins", sans-serif;
-} */
 
 /*================================HERO- barre de recherche===================*/
 .hero-search, .btn-scan{
@@ -265,6 +269,7 @@ background-color: var(--selc-bg-btnCTA);
 
 /*================================HERO-leafi=========================*/
 .hero {
+    margin: 2rem;
     position: relative;
 }
 
@@ -278,7 +283,7 @@ background-color: var(--selc-bg-btnCTA);
 }
 
 .hero-leafi img {
-    width: 4rem;
+    width: 10rem;
     height: auto;
 }
 
@@ -287,12 +292,12 @@ background-color: var(--selc-bg-btnCTA);
     border: 1px solid var(--selc-brd-card);
     border-radius: 16px; */
     padding: 0.5rem 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 
 
 /*=======================================================SECTION- Comment ça marche=====================================================*/
-.bloc {
+/* .bloc {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -323,52 +328,269 @@ background-color: var(--selc-bg-btnCTA);
     border-radius: 25px;
     display: flex;
     flex : 1; /*chaque carte prend une par égale, meme largeur*/
-    flex-direction: column;
+    /*flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 1.6rem;
+} */
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    padding: 3.2rem 1.6rem;
+    margin: 2rem;
 }
+
+.card-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    width: 100%;
+    /* margin: 2rem; */
+    /* flex: 1; */
+    /*pour que la taille des enfants (card-article) suit qd la card-info grandit ou reduit. flex-grow, shrink et basis (0% ici)*/
+}
+
+.card-article {
+    background-color: var(--selc-bg-card);
+    padding: 1.6rem;
+    border: solid 1px var(--selc-brd-card);
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    flex: 1;
+    /* display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between; */
+    gap: 1.6rem;
+    box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
+    position : relative; /*pour avoir mon bouton toujours au meme endroit dans la card*/
+    min-height: 20rem;
+    overflow: hidden; /*empêche le button flèche de sortir de la card*/
+}
+
+.card-icone {
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    width: 7rem;
+    height: 7rem;
+}
+
+.icone-tri img {
+    width: 6rem;
+    height: 6rem;
+    filter: brightness(0) saturate(100%) invert(29%) sepia(26%) saturate(1672%) hue-rotate(92deg) brightness(92%) contrast(93%);
+}
+
+.icone-depot {
+    position: relative;
+}
+
+.icone-map{
+    width: 6rem;
+    height: 6rem;
+    filter: brightness(0) saturate(100%) invert(12%) sepia(83%) saturate(3908%) hue-rotate(199deg) brightness(111%) contrast(87%);
+}
+
+.icone-pin {
+    position: absolute;
+    bottom:-1rem;
+    right: 0;
+    background-color: #FFFFFF;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%; /* pour avoir un cercle parfait, cercle avec toute la taille de l'élément*/
+    /* filter: brightness(0) saturate(100%) invert(12%) sepia(83%) saturate(3908%) hue-rotate(199deg) brightness(111%) contrast(87%); */
+}
+
+.icone-media img {
+    width: 6rem;
+    height: 6rem;
+    filter: brightness(0) saturate(100%) invert(45%) sepia(97%) saturate(483%) hue-rotate(344deg) brightness(99%) contrast(105%);
+}
+
+
+.card-titre{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-self: center; /*titre centré dans sa colonne*/
+    /* flex: 1; */
+}
+ /*.card-article img:first-child {
+    width: 6rem;
+    height: 6rem; */
+    /* background-image: #09632A;
+    flex-shrink: 0; */
+    /* pour empecher mon icone de rétrécir
+} */
+.btn-arrow {
+    /* position: absolute; */
+    /* bottom: 1.6rem;
+    right: 1.6rem; */
+    background-color: var(--selc-bg-btnCTA);
+    border : 1.5px solid var(--selc-brd-btnCTA);
+    border-radius: 50px;
+    /* padding: 0.8rem; */
+    width: 6rem;
+    height: 3rem;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center; /*centr!e la flèche dans le button,  %M§O */
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.btn-arrow img {
+    width: 2rem;
+    height: 2rem;
+}
+
 
 /*=======================================================SECTION- Défi=========================================================*/
-.info-defi {
-    align-items: flex-start;
 
+.info-defi{
+    margin: 2rem;
 }
+.info-defi .card-article {
+    display: grid ;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.6rem;
+    max-width: 60rem;
+    /* flex-direction: row;
+    align-items: center;
+    max-width: 60rem; */
+}
+
+/* .info-defi .card-icone {
+    border:none;
+    padding: 0;
+    width: 8rem;
+    height: 8rem;
+    flex-shrink: 0;
+} */
+
+.info-defi .card-icone img {
+    width: 20rem;
+    height: 20rem;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.btn-defi {
+    display: flex;
+    align-items: center;
+    gap:0.8rem;
+}
+
 
 /*=======================================================SECTION- MEDIATHEQUE=========================================================*/
 
-
-/*=======================================================SECTION- IMPACT=========================================================*/
-.impact{
+.info-media{
+    margin: 2rem;
+}
+.info-media .card-info {
     display: flex;
     flex-direction: row;
-    align-self: flex-start;
+    gap: 1.6rem;
+}
+
+.info-media .card-article {
+    flex: 1;
+    flex-direction: column;
+    gap: 0.8rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Image de couverture vidéo */
+.info-media .card-article img {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Bouton flèche en bas à droite */
+.info-media .card-article button {
+    position: absolute;
+    bottom: 1.6rem;
+    right: 1.6rem;
+    background-color: var(--selc-bg-btnCTA);
+    border: 1.5px solid var(--selc-brd-btnCTA);
+    border-radius: 50px;
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+/* Carte "Voir toute la médiathèque" */
+.info-media .card-article:last-child {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 20rem;
+}
+
+/*=======================================================SECTION- IMPACT=========================================================*/
+/* .impact{
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;} */
 
 
     /* align-content: center;
     justify-content: space-between; */
-}
 
-.impact .card-article{
+
+/* .impact .card-article{
     margin: 0.5rem 0.8rem;
+} */
+.info-impact{
+    margin: 2rem;
+}
+.impact {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    width: 100%;
 }
 
+.impact .card-article {
+    flex: 1;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+}
+
+.impact .card-article p {
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+}
 
 /*===================================================================FOOTER==========================================================*/
-footer{
+/* footer{
     padding: 0.5em;
-    margin-top: 1em;
+    margin-top: 1em; */
     /* margin-left: 1em;
     margin-right: 1em; */
-    width: 100%;
+    /* width: 100%; */
     /* min-height: 100vh; pour avoir footer tjrs en bas. mias ne fonctionne pas avec mon site */
-    background-color: rgb(74, 95, 105, 0.2);
+    /* background-color: rgb(74, 95, 105, 0.2);
     border-top: solid 1px rgb(74, 95, 105);
     display: flex;
     justify-content: space-between;
-}
+} */
 
-footer nav{
+/* footer nav{
     display: flex;
     justify-content: space-around;
     margin: auto;
@@ -384,16 +606,63 @@ footer nav ul{
     margin: 0px;
     display: flex;
     gap : 10px;
-}
+} */
 
-footer nav li{
+/* footer nav li{
     align-self: center;
     text-align: center;
     color: var(--selc-text-color);
     font-family: "poppins",sans-serif;
-    font-size: 1rem; /* 1rem = 16px par défaut pour ts nav, 1.125=18px. rem : relatif taille de base du nav. mais devient 1.8rem avec modif HTML*/
+    font-size: 1rem; 1rem = 16px par défaut pour ts nav, 1.125=18px. rem : relatif taille de base du nav. mais devient 1.8rem avec modif HTML
+} */
+footer {
+    padding: 1.6rem;
+    margin-top: 3.2rem;
+    background-color: rgb(74, 87, 105, 0.2);
+    border-top: solid 1px var(--selc-brd-card);
+    text-align: center;
 }
 
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+}
+
+footer nav li {
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+}
+
+.footer-bas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.6rem;
+    padding-top: 1.6rem;
+    border-top: solid 1px var(--selc-brd-card);
+}
+
+.rs {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.rs img {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.nom-site {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+}
 
 /*===================================================================RESPONSIVE==========================================================*/
 @media (min-width: 768px) {

@@ -63,115 +63,132 @@
             </div>
         </section>
 
-        <section class="bloc">
+        <section class="info">
             <h2>Comment ça fonctionne ?</h2>
             <p>SelecTri t'aide à mieux trier, déposer et comprendre tes déchets au quotidien.</p>
             <div class="card-info">
                 <article class="card-article">
-                    <img src="images/UI_icone/recycle.svg" alt="image du symbole de recyclage">
-                    <div>
+                    <div class="card-icone icone-tri">
+                        <img src="images/UI_icone/recycle.svg" alt="image du symbole de recyclage">
+                    </div>
+                    <div class="card-titre">
                         <h3>Je trie</h3>
                         <p> Consulter les bons gestes de tri</p>
                     </div>
-                    <a href="#">
-                        <button>
-                            <img src="images/UI_icone/arrow-right.svg" alt="flèche à droite pour dire : voir plus">
-                        </button>
-                    </a>
+                    <button class="btn-arrow" aria-label="voir les consignes de tri">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
                 </article>
                 <article class="card-article">
-                    <img src="images/UI_icone/map.svg" alt="icone d'une carte">
-                    <img src="images/UI_icone/map-pin.svg" alt="icone d'un pin pour la carte">
-                    <h3>Je dépose</h3>
-                    <p> Trouver un point de dépôt près de chez moi</p>
-                    <a href="#">
-                        <button>
-                            <img src="images/UI_icone/arrow-right.svg" alt="flèche à droite pour dire : voir plus">
-                        </button>
-                    </a>
+                    <div class="card-icone icone-depot">
+                        <img src="images/UI_icone/map.svg" alt="icone carte" class="icone-map">
+                        <img src="images/UI_icone/pin-alt-duotone-line_ (1).png" alt="icone pin" class="icone-pin">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Je dépose</h3>
+                        <p> Trouver un point de dépôt près de chez moi</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="voir la carte intéractive des dépôts de déchets">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
                 </article>
                 <article class="card-article">
-                    <img src="images/UI_icone/lightbulb (1).svg" alt="icone d'une ampoule">
-                    <h3>Je comprends</h3>
-                    <p> Explorer les vidéos et ressources utiles</p>
-                    <a href="#">
-                        <button>
-                            <img src="images/UI_icone/arrow-right.svg" alt="flèche à droite pour dire : voir plus">
-                        </button>
-                    </a>
+                    <div class="card-icone icone-media">
+                        <img src="images/UI_icone/lightbulb (1).svg" alt="icone d'une ampoule">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Je comprends</h3>
+                        <p> Explorer les vidéos et ressources utiles</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="voir la médiathèque">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
                 </article>
             </div>
         </section>
 
-        <section class="blc-info info-defi">
-            <h2>Défi de la semaine</h2>
-            <div class = "card-info">
-                    <article class="card-article">
-                    <h3>Zéro plastique jetable</h3>
-                <p> Remplace une habitude plastique par une alternative durable : gourde, tote bag, boîte réutilisable.
-                    7 jours, un geste à la fois.</p>
-                <img src="images/UI_icone/recycle.svg" alt="symbole du recyclage">
-                <button> Je participe
-                    <img src="images/UI_icone/arrow-right.svg" alt="flèche à droite pour dire : voir plus">
-                </button>
-            </article>
-
+        <section class="info-defi">
+            <h2>Défi du mois</h2>
+            <div class="card-info">
+                <article class="card-article">
+                    <div class="card-icone">
+                        <img src="images/illustrations/plastic-free.jpg"
+                            alt="image du recyclage du papier">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Zéro plastique jetable</h3>
+                        <p> Remplace une habitude plastique par une alternative durable : <strong>gourde, tote bag, boîte
+                            réutilisable.</strong>
+                            1 mois, un geste à la fois.</p>
+                    </div>
+                    <button class="btn-principal btn-defi" aria-label="Partciper au défi mensuel"> Je participe
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
             </div>
-
         </section>
 
-        <section class="blc-info info-media">
+        <section class="info-media">
             <h2>A la une - Médiathèque</h2>
-            <div class ="card-info">
+            <div class="card-info">
                 <article class="card-article">
-                <h3>Recyclage papier</h3>
-                <p>Durée : 2 min 20</p>
-                <img src="" alt="image de la video recyclage papier">
-                <button>
-                    <img src="images/UI_icone/arrow-right.svg" alt="flèche à droite pour dire : voir plus">
-                </button>
-                <!-- <img src="images/UI_icone/recycle.svg" alt="symbole du recyclage">
-                <a href=""> Voir la vidéo
-                </a>  -->
-            </article>
-            <article class="card-article">
-                <h3>Recyclage verre</h3>
-                <p>Durée : 3 min 15</p>
-                <img src="" alt="image de la video recyclage verre">
-                <button>
-                    <img src="images/UI_icone/arrow-right.svg" alt="flèche à droite pour dire : voir plus">
-                </button>
-            </article>
-            <article class="card-article">
-                <h3>Voir toute la Médiathèque</h3>
-                <button> Accéder
-                    <img src="images/UI_icone/arrow-right.svg" alt="flèche à droite pour dire : voir plus">
-                </button>
-            </article>
+                    <div class="card-icone">
+                        <img src="images/illustrations/image-recycled-papier.png"
+                            alt="image de la video recyclage papier">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Recyclage papier</h3>
+                        <p>Durée : 2 min 20</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="Voir plus d'informations sur la vidéo de recylage papier ">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+
+                </article>
+                <article class="card-article">
+                    <div class="card-icone">
+                        <img src="images/illustrations/image-recycled-glass.jpg"
+                            alt="image de la video recyclage verre">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Recyclage verre</h3>
+                        <p>Durée : 3 min 15</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="Voir plus d'informations sur la video de recyclage verre">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+                <article class="card-article">
+                    <div class="card-titre">
+                        <h3>Voir toute la Médiathèque</h3>
+                    </div>
+                    <button class="btn-arrow" aria-label="Accéder à tout le contenu de la mediathèque"> Accéder
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
             </div>
-            
         </section>
 
-        <section class="blc-info info-impact" >
+        <section class="info-impact">
             <div class="titre-impact">
                 <h2>Impact collectif
                     <small> - mis à jour régulièrement</small>
                 </h2>
             </div>
             <div class="impact">
-                <div class="card-article">
+                <div class="card-impact">
                     <h3>kg mensuel recyclés</h3>
                     <p>125 kg</p>
                 </div>
-                <div class="card-article">
+                <div class="card-imapct">
                     <h3>Trinautes actifs</h3>
                     <p>58</p>
                 </div>
-                <div class="card-article">
+                <div class="card-impact">
                     <h3>Défis relevés</h3>
                     <p>167</p>
                 </div>
-                <div class="card-article">
+                <div class="card-impact">
                     <h3>Points de dépôts</h3>
                     <p>300 points référencés</p>
                 </div>

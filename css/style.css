@@ -107,7 +107,7 @@ a:visited{
 }
 
 
-/*==================================================================== HEADER=====================================================*/
+/*=====================================================================HEADER==========================================================*/
 header {
     padding: 0.5em;
     margin-bottom: 1em;
@@ -157,7 +157,7 @@ header {
     font-family: "poppins", sans-serif;
 }
 
-/*=================================HEADER version mobile===============================*/
+/*===============================navigation version mobile==========================================*/
 
 #header-btn {
     display: none;
@@ -184,6 +184,37 @@ header {
     left: 0;
 }
 
+/*==================CSS pour avoir les couleurs background des menu ouvert===============*/
+
+.nav-menu.open.open .nav-tri:hover{
+    background-color: var(--selc-tri-color);
+    border-radius: 4px;
+    }
+
+.nav-menu.open.open .nav-depot:hover {
+    background-color: var(--selc-depot-color);
+    border-radius: 4px;
+    }
+
+.nav-menu.open.open .nav-repair:hover {
+    background-color: var(--selc-repair-color);
+    border-radius: 4px;
+}
+
+.nav-menu.open.open .nav-media:hover {
+    background-color: var(--selc-media-color);
+    border-radius: 2px;
+}
+
+.nav-menu.open.open .nav-defi:hover {
+    background-color: var(--selc-defi-color);
+    border-radius: 4px;
+}
+
+
+/*==================FIN CSS pour avoir les couleurs background des menu ouvert===============*/
+
+
 .nav-menu li {
     padding: 1.2rem 2rem;
     border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -196,7 +227,11 @@ nav a {
     text-decoration: none;
 }
 
-/*====================================================================== HERO ==========================================================*/
+/*=======================================================HERO VERSION MOBILE==========================================================*/
+/*============================HERO card=====================================*/
+.hero {
+    margin: 2rem;
+}
 .hero-card {
     background-color: var(--selc-bg-card);
     padding: 1.6rem;
@@ -211,7 +246,7 @@ nav a {
     box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
 }
 
-/*================================HERO- barre de recherche===================*/
+/*==================bloc recherche & scan version mobile====================*/
 .hero-search,
 .btn-scan {
     display: flex;
@@ -232,10 +267,16 @@ nav a {
     ;
 }
 
-.btn-scan {
+.hero-search .btn-search {
+    background: none;
+    /*retirer color par défaut de l'image*/
+    border: none;
+    border-radius: 50px;
     background-color: var(--selc-bg-btnCTA);
+    cursor: pointer;
+    padding: 0.1rem;
+    min-height: 4rem;
 }
-
 .hero-search {
     background-color: rgb(240, 239, 239);
     padding-left: 0.8rem;
@@ -254,17 +295,6 @@ nav a {
     text-align: center;
 }
 
-.hero-search .btn-search {
-    background: none;
-    /*retirer color par défaut de l'image*/
-    border: none;
-    border-radius: 50px;
-    background-color: var(--selc-bg-btnCTA);
-    cursor: pointer;
-    padding: 0.1rem;
-    min-height: 4rem;
-}
-
 .btn-search img,
 .btn-scan img {
     width: 2.4rem;
@@ -272,10 +302,12 @@ nav a {
     /*24px, valeur de base pris svt pour icone */
 }
 
-/*================================HERO-leafi=========================*/
-.hero {
-    margin: 2rem;
+.btn-scan {
+    background-color: var(--selc-bg-btnCTA);
 }
+
+/*================================HERO-leafi=========================*/
+
 
 .hero-leafi {
     display: flex;
@@ -693,7 +725,7 @@ footer nav li {
 
 @media only screen and (min-width: 992px) {
 
-    /*==========================HEADER version Desktop============================*/
+    /*===================================HEADER version Desktop============================*/
     .nav-menu {
         flex-direction: row;
         position: static;

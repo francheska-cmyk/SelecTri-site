@@ -19,7 +19,7 @@
 </head>
 
 <body class="page-layout">
-    <header class="page-layout_header">
+    <header>
         <nav aria-label="navigateur-principal" class="header-nav">
             <a href="index.html" class="logo">
                 <img src="images/identite_site/leafi-logo.svg" alt="Logo du site SelecTri">
@@ -35,7 +35,6 @@
                 <li class="nav-media nav-item"><a href="#">Médiathèque</a></li>
                 <li class="nav-defi nav-item"><a href="#">Défis</a></li>
                 <!-- <li class="nav-compte nav-item"><a href="#">Mon compte</a></li> -->
-
             </ul>
             <div class="header-burger-trigger">
                 <button class="js-btn-menu" aria-label="Ouvrir la navigation mobile" aria-expanded="false"
@@ -45,7 +44,7 @@
                     <span></span>
                 </button>
             </div>
-            <button class="btn-principal" id="header-btn" type="button">Me connecter
+            <button class="btn-principal" id="header-btn" type="button">connecter
             </button>
             <!-- <button class="btn-user" aria-label="Se connecter"><img src="images/UI_icone/user.svg" alt="">
             </button> ajouter le compte dans le menu burger, faire apparaitre uniquement compte connecté-->
@@ -55,9 +54,9 @@
         <section class="hero">
             <div class="hero-card">
                 <h1>Trier ses déchets, simplement</h1>
-                <p>Cherchez un déchet, trouvez la bonne consigne et localisez le bon point de dépôt près de vous.</p>
+                <p>Chercher un déchet, trouver la bonne consigne et localiser le bon point de dépôt près de vous.</p>
                 <div class="hero-search">
-                    <input type="search" placeholder="Emballage, produit, objet..." autocomplete="off">
+                    <input type="search" placeholder="Emballage, produit, objet..." value= "" autocomplete="off">
                     <button class="btn-search" aria-label="lancer la recherche" type="button">
                         <img src="images/UI_icone/search.svg" alt="">
                     </button>

@@ -1,7 +1,7 @@
 /*ATTENTION CURSOR : POINTER NE FONCTIONNE PLUS A COORIGER*/
 /*Vérifier si l'unité REM peut être utilisé pour les height et width*/
 
-
+/*==================================================================CSS général de BASE=================================================================================*/
 :root {
     --selc-bg-color: #fafaf7;
     --selc-bg-card: #FFFFFF;
@@ -22,7 +22,6 @@
     --selc-defi-color: rgba(168, 85, 247, 0.2);
 }
 
-/*==== CSS de BASE====*/
 html {
     font-size: 62.5%;
     /*62.5% de 16px =10px*/
@@ -32,7 +31,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*pour avoir le padding et la border inclue dnas la largeur que je définie pas element. Et non width + padding+boder*/
+    /*pour avoir le padding et la border inclue dans la largeur que je définie pas element. Et non width + padding+boder*/
     /* outline: 1px solid red; super utile pour voir toutes les decompostions du site et voir si un element est en dehors page HTML du site */
 }
 
@@ -50,27 +49,22 @@ html {
 
 main {
     margin: 1rem;
-    flex: 1;
-}
-
-h1,
-h2,
-h3,
-h4 {
-    font-family: "poppins", sans-serif;
 }
 
 h1 {
+    font-family: "poppins", sans-serif;
     font-size: 2rem;
     font-weight: bolder;
 }
 
 h2 {
+    font-family: "poppins", sans-serif;
     font-size: 1.8rem;
     font-weight: bold;
 }
 
 h3 {
+    font-family: "poppins", sans-serif;
     font-size: 1.6rem;
     font-weight: lighter;
 }
@@ -107,7 +101,7 @@ a:visited{
 }
 
 
-/*=====================================================================HEADER==========================================================*/
+/*==================================================================================HEADER=====================================================================================*/
 header {
     padding: 0.5em;
     margin-bottom: 1em;
@@ -308,16 +302,37 @@ nav a {
 
 /*================================HERO-leafi=========================*/
 
+@keyframes leafiAppear{
+from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
 
-.hero-leafi {
+}}
+
+
+.hero-leafi{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 0.4rem;
     padding: 0.5rem 0;
-}
+    animation-name: leafiAppear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+        & p {
+    padding: 0.5rem 0.8rem;
+    font-size: 1.8rem;}
+        & img {
+    width: 10rem;
+    height: auto;
+    }
+}  
 
-.hero-leafi img {
+ /* .hero-leafi img {
     width: 10rem;
     height: auto;
 }
@@ -325,7 +340,46 @@ nav a {
 .hero-leafi p {
     padding: 0.5rem 0.8rem;
     font-size: 1.8rem;
-}
+}   */
+
+
+/* .hero-leafi {
+    opacity: 0;
+}  
+
+.visible {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 0.4rem;
+    padding: 0.5rem 0;
+    animation-name: leafiAppear;
+    animation-duration: 5s;
+    & p {
+    padding: 0.5rem 0.8rem;
+    font-size: 1.8rem;}
+    & img {
+    width: 10rem;
+    height: auto;
+    }
+}   */
+ 
+
+
+/* .hero-leafi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    padding: 0.5rem 0;
+    animation: leafiAppear 2s linear infinite slide-in; 
+} */
+
+
+
+
+
+
 
 
 /*=======================================================SECTION- Comment ça marche=====================================================*/
@@ -719,7 +773,12 @@ footer nav li {
     transform: rotate(-135deg)
 }
 
-/*===================================================================RESPONSIVE==========================================================*/
+
+
+
+
+
+/*==================================================================RESPONSIVE==========================================================*/
 
 
 

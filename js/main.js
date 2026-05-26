@@ -7,3 +7,11 @@ menuOpener.addEventListener('click', () => {
     console.log(menuOpener);
     navMenu.classList.toggle('open');
 });
+
+
+//========================Apparition de leafi=====================//
+// setTimeout(() =>{
+//     const welcome = document.querySelector('.hero-leafi');
+//     welcome.style.display="flex";
+//     welcome.classList.add('visible')},1000
+// )

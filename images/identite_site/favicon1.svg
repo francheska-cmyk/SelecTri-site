@@ -8,7 +8,7 @@
    xml:space="preserve"
    sodipodi:docname="favicon1.svg"
    inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
-   inkscape:export-filename="favicon1.svg"
+   inkscape:export-filename="C:\Users\charl\favicon3.jpg"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -30,9 +30,9 @@
      inkscape:cy="44.9262"
      inkscape:window-width="1920"
      inkscape:window-height="991"
-     inkscape:window-x="-9"
-     inkscape:window-y="-9"
-     inkscape:window-maximized="1"
+     inkscape:window-x="-32000"
+     inkscape:window-y="-32000"
+     inkscape:window-maximized="0"
      inkscape:current-layer="g20"
      showgrid="false" /><defs
      id="defs1"><linearGradient
@@ -225,7 +225,10 @@
          id="path2"
          transform="matrix(-1.2446211,-0.02345703,0.05894183,-0.14733348,160.71269,200.01664)" /><g
          id="g11"
-         transform="translate(-39.943431,-2.3386084)"><path
+         transform="matrix(0.76716996,0,0,0.7059558,-22.981492,48.863211)"
+         inkscape:export-filename="C:\Users\charl\g11.jpg"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96"><path
            style="opacity:1;mix-blend-mode:normal;fill:url(#linearGradient21);stroke:#0f612f;stroke-width:1;stroke-dasharray:none;stroke-opacity:0.996078"
            d="m 48.78899,171.30971 c -3.08111,0.13694 -0.75356,-7.20068 -0.75356,-7.20068 0,0 -10.20952,-4.87628 -9.12645,-8.03799 0.58831,-1.7174 5.18501,-2.82709 2.51187,-1.84203 -2.67314,0.98506 -9.69587,-7.70835 -7.5356,-11.21967 1.77594,-2.88664 6.94949,1.00474 6.94949,1.00474 -4.82799,-3.24776 -7.60687,-13.37978 -4.43763,-16.82952 3.59633,-3.91461 6.55121,2.31589 6.44713,0.16746 -0.18283,-3.77398 0.22604,-8.1717 3.26542,-8.7078 1.75982,-0.3104 2.94436,3.33422 3.26542,2.51187 2.67109,-6.84177 9.4783,-10.25954 11.219659,-8.20543 2.35791,2.78139 -1.185738,14.8166 -0.837278,12.22442 0.348448,-2.59217 5.181448,-3.37978 6.279658,-1.17221 1.09821,2.20757 -0.30432,8.13386 -2.84678,8.45663 -2.54246,0.32276 5.6073,-1.67386 6.82689,0.92301 1.275,2.71484 -2.2318,7.80082 -2.2318,7.80082 -1.06578,0.74146 1.47917,-1.47264 3.13084,-0.5801 2.54944,1.3777 0.31579,5.21546 -0.56208,6.01446 -1.22209,1.1123 -7.11282,6.81622 -11.117129,6.35738 -1.14759,-0.1315 3.473099,-1.53294 4.790579,-0.0857 3.46728,3.80871 -8.856289,7.76346 -12.643049,11.47087 -1.77032,1.73322 0.15059,6.81255 -2.76304,6.78203 -2.91364,-0.0305 0.16744,0.16746 0.16744,0.16746 z"
            id="path3"

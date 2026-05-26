@@ -2,67 +2,76 @@
 /*Vérifier si l'unité REM peut être utilisé pour les height et width*/
 
 
-:root{
-    --selc-bg-color:#fafaf7;
-    --selc-bg-card:#FFFFFF;
-    --selc-brd-card:#09632A;
-    --selc-text-color:#0A0A0A;
-    --selc-linked-color:#4A5769;
-    --selc-link-color:#10569C;
-    --selc-bg-btnCTA:#4ADE80;
-    --selc-brd-btnCTA:#09632A;
-    --selc-bg-btnSEC:#F97316;
-    --selc-brd-btnSEC:#0A0A0A;
-    --selc-bg-btnTER:#4A5769;
-    --selc-brd-btnTER:#0A0A0A;
-    --selc-tri-color : rgba(9,99,42, 0.2);
-    --selc-depot-color:rgba(249, 115, 22, 0.2);
-    --selc-repair-color :rgba(251, 192, 45, 0.2);
+:root {
+    --selc-bg-color: #fafaf7;
+    --selc-bg-card: #FFFFFF;
+    --selc-brd-card: #09632A;
+    --selc-text-color: #0A0A0A;
+    --selc-linked-color: #4A5769;
+    --selc-link-color: #10569C;
+    --selc-bg-btnCTA: #4ADE80;
+    --selc-brd-btnCTA: #09632A;
+    --selc-bg-btnSEC: #F97316;
+    --selc-brd-btnSEC: #0A0A0A;
+    --selc-bg-btnTER: #4A5769;
+    --selc-brd-btnTER: #0A0A0A;
+    --selc-tri-color: rgba(9, 99, 42, 0.2);
+    --selc-depot-color: rgba(249, 115, 22, 0.2);
+    --selc-repair-color: rgba(251, 192, 45, 0.2);
     --selc-media-color: rgba(13, 148, 136, 0.2);
-    --selc-defi-color:rgba(168, 85, 247, 0.2);
+    --selc-defi-color: rgba(168, 85, 247, 0.2);
 }
 
 /*==== CSS de BASE====*/
-html{
-    font-size: 62.5%; /*62.5% de 16px =10px*/
+html {
+    font-size: 62.5%;
+    /*62.5% de 16px =10px*/
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /*pour avoir le padding et la border inclue dnas la largeur que je définie pas element. Et non width + padding+boder*/
+    box-sizing: border-box;
+    /*pour avoir le padding et la border inclue dnas la largeur que je définie pas element. Et non width + padding+boder*/
     /* outline: 1px solid red; super utile pour voir toutes les decompostions du site et voir si un element est en dehors page HTML du site */
 }
 
-.page-layout{
+.page-layout {
     background-color: var(--selc-bg-color);
     color: var(--selc-text-color);
-    font-family:"Inter",sans-serif;
-    font-size: 1.4rem; /*14px ÷ 16px = 0.875rem car 1rem=16px mais avec 62.5% sur html ça devient 1.4rem*/
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    /*14px ÷ 16px = 0.875rem car 1rem=16px mais avec 62.5% sur html ça devient 1.4rem*/
     display: flex;
     flex-direction: column;
-    gap:2.4rem ;
+    gap: 2.4rem;
     min-height: 100vh;
 }
 
-main{
+main {
     margin: 1rem;
     flex: 1;
 }
 
-h1, h2, h3, h4{
+h1,
+h2,
+h3,
+h4 {
     font-family: "poppins", sans-serif;
 }
-h1{
+
+h1 {
     font-size: 2rem;
     font-weight: bolder;
 }
-h2{
+
+h2 {
     font-size: 1.8rem;
     font-weight: bold;
 }
-h3{
-    font-size:1.6rem;
+
+h3 {
+    font-size: 1.6rem;
     font-weight: lighter;
 }
 
@@ -77,9 +86,11 @@ a:visited{
 
 .btn-principal {
     background-color: var(--selc-bg-btnCTA);
-    border: solid var(--selc-brd-btnCTA) 1.5px; /*pour éviter l'effet rebond au passage du hover si gagne 1px de chaque côté risque d'avoir grand décalage*/
-    border-radius : 40px;
-    padding: 1rem 2rem; /*10px et 20px*/
+    border: solid var(--selc-brd-btnCTA) 1.5px;
+    /*pour éviter l'effet rebond au passage du hover si gagne 1px de chaque côté risque d'avoir grand décalage*/
+    border-radius: 40px;
+    padding: 1rem 2rem;
+    /*10px et 20px*/
     color: var(--selc-text-color);
     font-family: "Inter", sans-serif;
     font-size: 1.6rem;
@@ -87,27 +98,30 @@ a:visited{
     width: auto;
     height: auto;
 }
-.btn-principal:hover{
+
+.btn-principal:hover {
     box-shadow: 0 4px 12px rgba(9, 99, 42, 0.3);
-    cursor: pointer; /*bonne pratique pour signaler un élément cliquable*/
+    cursor: pointer;
+    /*bonne pratique pour signaler un élément cliquable*/
     border: solid 2px var(--selc-brd-btnCTA);
 }
 
 
-/*==================================================================== HEADER=====================================================*/ 
-header{
+/*==================================================================== HEADER=====================================================*/
+header {
     padding: 0.5em;
     margin-bottom: 1em;
     width: 100%;
-    height: auto ;
-    position: sticky;  
-    z-index: 1; /*permet d'éviter d'avoir le contenu qui passe au-dessus du header*/
+    height: auto;
+    position: sticky;
+    z-index: 1;
+    /*permet d'éviter d'avoir le contenu qui passe au-dessus du header*/
     background-color: var(--selc-bg-color);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    top : 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    top: 0;
 }
 
-.header-nav{
+.header-nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -116,92 +130,76 @@ header{
     padding: 0.5em;
     margin-bottom: 1em;
 }
+
 .logo {
     display: flex;
     align-items: center;
 }
 
 .logo img {
-    height : 4rem; /*standard pour un logo 40, mais trop petit pour le mien*/
-    width: auto;  /*logo en SVG donc adaptatation facile à la largeur de l'écran*/
+    height: 6rem;
+    /*standard pour un logo 40, mais trop petit pour le mien*/
+    width: auto;
+    /*logo en SVG donc adaptatation facile à la largeur de l'écran*/
 }
-.logo-selec{
-    font-size: 2rem;
+
+.logo-selec {
+    font-size: 4rem;
     font-weight: bold;
-    color:#1E293B ;
+    color: #1E293B;
     font-family: "poppins", sans-serif;
 }
-.logo-tri{
-    font-size: 2rem;
+
+.logo-tri {
+    font-size: 4rem;
     font-weight: bold;
-    color:#10853B ;
+    color: #10853B;
     font-family: "poppins", sans-serif;
 }
 
 /*=================================HEADER version mobile===============================*/
-.btn-menu{
-    display: block;
-}
 
-#header-btn{
+#header-btn {
     display: none;
 }
 
-/*===================================HEADER version Destop=============================*/
-.header-nav ul{
+.nav-menu {
     list-style: none;
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
     display: flex;
-    gap : 30px;
-    display: none;
+    flex-direction: column;
+    position: fixed;
+    left: -100%;
+    top: 8rem;
+    width: 100%;
+    gap: 0;
+    background-color: var(--selc-bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 100;
 }
 
-.header-nav li{
-    align-self: center;
-    text-align: center;
-    color: var(--selc-text-color);
-    font-family: "poppins",sans-serif;
-    font-size: 1.6rem; /* 1rem = 16px par défaut pour ts nav, 1.125=18px. rem : relatif taille de base du nav. mais devient 1.8rem avec modif HTML*/
-    padding: 0.8rem 1rem; /*permet d'éviter que le background color hover soit très serré sur le texte, pour aérer*/
+.nav-menu.open {
+    left: 0;
 }
 
-nav a{ 
+.nav-menu li {
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    font-family: "poppins", sans-serif;
+    font-size: 1.6rem;
+}
+
+nav a {
     color: var(--selc-text-color);
     text-decoration: none;
 }
 
-/*pour le changement de couleur au survol*/
-.nav-tri:hover{
-    background-color:var(--selc-tri-color);
-    border-radius:8px;
-}
-
-.nav-depot:hover{
-    background-color:var(--selc-depot-color);
-    border-radius:8px;
-}
-
-.nav-repair:hover{
-    background-color:var(--selc-repair-color);
-    border-radius:8px;
-}
-
-.nav-media:hover{
-    background-color:var(--selc-media-color);
-    border-radius:8px;
-}
-
-.nav-defi:hover{
-    background-color:var(--selc-defi-color);
-    border-radius:8px;
-}
-
-
-/*====================================================================== HERO ==========================================================*/ 
-.hero-card{
+/*====================================================================== HERO ==========================================================*/
+.hero-card {
     background-color: var(--selc-bg-card);
-    padding:1.6rem;
+    padding: 1.6rem;
     margin-bottom: 2.5rem;
     border: solid 1px var(--selc-brd-card);
     border-radius: 25px;
@@ -214,54 +212,64 @@ nav a{
 }
 
 /*================================HERO- barre de recherche===================*/
-.hero-search, .btn-scan{
+.hero-search,
+.btn-scan {
     display: flex;
     align-items: center;
     justify-content: center;
     align-self: center;
     border: none;
     border-radius: 50px;
-    width : 90%;
-    min-height: 4rem; /*pour éviter débordement contenu*/
-    gap : 0.8rem;
+    width: 90%;
+    min-height: 4rem;
+    /*pour éviter débordement contenu*/
+    gap: 0.8rem;
     padding: 0.1rem;
     font-family: "Inter", sans-serif;
     font-size: 1.2rem;
-    background: transparent; /*retire le fond blanc de l'input*/;
+    background: transparent;
+    /*retire le fond blanc de l'input*/
+    ;
 }
 
-.btn-scan{
-background-color: var(--selc-bg-btnCTA);
+.btn-scan {
+    background-color: var(--selc-bg-btnCTA);
 }
 
-.hero-search{
+.hero-search {
     background-color: rgb(240, 239, 239);
-    padding-left:0.8rem;
+    padding-left: 0.8rem;
 }
 
-.hero-search input{
-    border : none; 
-    outline: none; /*ajouter outline en plus de border pour être sur que la bordure n'apparait pas au survol*/
+.hero-search input {
+    border: none;
+    outline: none;
+    /*ajouter outline en plus de border pour être sur que la bordure n'apparait pas au survol*/
     width: 100%;
     font-family: "Inter", sans-serif;
     font-size: 1.2rem;
-    background: transparent; /*retire le fond blanc de l'input*/;
+    background: transparent;
+    /*retire le fond blanc de l'input*/
+    ;
     text-align: center;
 }
 
-.hero-search .btn-search{
-    background: none; /*retirer color par défaut de l'image*/
-    border : none;
+.hero-search .btn-search {
+    background: none;
+    /*retirer color par défaut de l'image*/
+    border: none;
     border-radius: 50px;
     background-color: var(--selc-bg-btnCTA);
     cursor: pointer;
     padding: 0.1rem;
-    min-height: 4rem ;
+    min-height: 4rem;
 }
 
-.btn-search img, .btn-scan img {
+.btn-search img,
+.btn-scan img {
     width: 2.4rem;
-    height: 2.4rem; /*24px, valeur de base pris svt pour icone */
+    height: 2.4rem;
+    /*24px, valeur de base pris svt pour icone */
 }
 
 /*================================HERO-leafi=========================*/
@@ -318,12 +326,15 @@ background-color: var(--selc-bg-btnCTA);
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    flex: 1; /*pour que la taille des enfants (card-article) suit qd la card-info grandit ou reduit. flex-grow, shrink et basis (0% ici)*/
+    flex: 1;
+    /*pour que la taille des enfants (card-article) suit qd la card-info grandit ou reduit. flex-grow, shrink et basis (0% ici)*/
     gap: 1.6rem;
     box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
-    position : relative; /*pour avoir mon bouton toujours au meme endroit dans la card*/
+    position: relative;
+    /*pour avoir mon bouton toujours au meme endroit dans la card*/
     min-height: 20rem;
-    overflow: hidden; /*empêche le button flèche de sortir de la card*/
+    overflow: hidden;
+    /*empêche le button flèche de sortir de la card*/
 }
 
 .card-icone {
@@ -346,7 +357,7 @@ background-color: var(--selc-bg-btnCTA);
     position: relative;
 }
 
-.icone-map{
+.icone-map {
     width: 6rem;
     height: 6rem;
     filter: brightness(0) saturate(100%) invert(12%) sepia(83%) saturate(3908%) hue-rotate(199deg) brightness(111%) contrast(87%);
@@ -354,12 +365,13 @@ background-color: var(--selc-bg-btnCTA);
 
 .icone-pin {
     position: absolute;
-    bottom:-1rem;
+    bottom: -1rem;
     right: 0;
     background-color: #FFFFFF;
     width: 3.5rem;
     height: 3.5rem;
-    border-radius: 50%; /* pour avoir un cercle parfait, cercle avec toute la taille de l'élément*/
+    border-radius: 50%;
+    /* pour avoir un cercle parfait, cercle avec toute la taille de l'élément*/
     /* filter: brightness(0) saturate(100%) invert(12%) sepia(83%) saturate(3908%) hue-rotate(199deg) brightness(111%) contrast(87%); */
 }
 
@@ -370,33 +382,37 @@ background-color: var(--selc-bg-btnCTA);
 }
 
 
-.card-titre{
+.card-titre {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    align-self: center; /*titre centré dans sa colonne*/
+    align-self: center;
+    /*titre centré dans sa colonne*/
 }
 
 .btn-arrow {
     background-color: var(--selc-bg-btnCTA);
-    border : 1.5px solid var(--selc-brd-btnCTA);
+    border: 1.5px solid var(--selc-brd-btnCTA);
     border-radius: 50px;
     width: 6rem;
     height: 3rem;
     display: flex;
     align-self: flex-end;
     align-items: center;
-    justify-content: center; /*centr!e la flèche dans le button*/
+    justify-content: center;
+    /*centr!e la flèche dans le button*/
     flex-shrink: 0;
     cursor: pointer;
 }
+
 .btn-arrow img {
     width: 2rem;
     height: 2rem;
 }
+
 /*=======================================================SECTION- Défi=========================================================*/
 .info-defi .card-article {
-    display: grid ;
+    display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
     gap: 1.6rem;
@@ -407,23 +423,25 @@ background-color: var(--selc-bg-btnCTA);
 }
 
 .info-defi .card-icone {
-    border:none;
+    border: none;
     padding: 0;
-    width : 12rem;
-    height : 12rem;
-} 
+    width: 12rem;
+    height: 12rem;
+}
 
 .info-defi .card-icone img {
     object-fit: cover;
     border-radius: 12px;
 }
 
-.btn-defi, 
+.btn-defi,
 .btn-media {
     display: flex;
-    align-items: center; /*aligne contenu intérieur btn, centré verticalement*/
-    align-self: flex-end; /*positonne btn dans conteneur parent*/
-    gap:0.8rem;
+    align-items: center;
+    /*aligne contenu intérieur btn, centré verticalement*/
+    align-self: flex-end;
+    /*positonne btn dans conteneur parent*/
+    gap: 0.8rem;
 }
 
 
@@ -434,39 +452,46 @@ background-color: var(--selc-bg-btnCTA);
     gap: 1.6rem;
 } */
 
-.card-media{
+.card-media {
     background-color: var(--selc-bg-card);
     /* padding: 1.6rem; */
     border: solid 1px var(--selc-brd-card);
     border-radius: 25px;
-    display: flex ;
+    display: flex;
     flex-direction: column;
     /* align-items: center; */
-    flex: 1; /*pour que la taille des enfants (card-article) suit qd la card-info grandit ou reduit. flex-grow, shrink et basis (0% ici)*/
+    flex: 1;
+    /*pour que la taille des enfants (card-article) suit qd la card-info grandit ou reduit. flex-grow, shrink et basis (0% ici)*/
     gap: 1.6rem;
     box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
-    position : relative; /*pour avoir mon bouton toujours au meme endroit dans la card*/
+    position: relative;
+    /*pour avoir mon bouton toujours au meme endroit dans la card*/
     max-height: 30rem;
-    overflow: hidden; /*empêche le button flèche de sortir de la card*/
+    overflow: hidden;
+    /*empêche le button flèche de sortir de la card*/
     max-width: 60rem;
     /* gap: 0.8rem; */
     /* position: relative; */
     /* overflow: hidden; */
 }
 
-.card-media .card-titre{
+.card-media .card-titre {
     margin: 0.5rem 2rem 2.5rem;
     align-self: stretch;
 }
 
-.card-media .btn-arrow{
-    position: absolute; /*eviter sort de la card*/
-    bottom: 1rem; /*pour garder btn en bas*/
-    right: 3rem; /*decaler de la bordure droite*/
+.card-media .btn-arrow {
+    position: absolute;
+    /*eviter sort de la card*/
+    bottom: 1rem;
+    /*pour garder btn en bas*/
+    right: 3rem;
+    /*decaler de la bordure droite*/
     /* margin: 0; */
 }
+
 /*pour avoir voir toute la médiathèque centre*/
-.card-media:last-child{
+.card-media:last-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -484,7 +509,8 @@ background-color: var(--selc-bg-btnCTA);
 .card-media:last-child .btn-principal {
     align-self: center;
 }
-.media-vignette{
+
+.media-vignette {
     width: 100%;
     height: 20rem;
     object-fit: cover;
@@ -493,23 +519,25 @@ background-color: var(--selc-bg-btnCTA);
 
 /*=======================================================SECTION- IMPACT=========================================================*/
 
-.info-impact{
+.info-impact {
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
     margin: 2rem 1rem 1.6rem 1rem;
     padding: 2rem;
 }
+
 .impact {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
     width: 100%;
 }
+
 .card-impact {
     background-color: var(--selc-bg-card);
     border: solid 1px var(--selc-brd-card);
-    border-top:4px solid var(--selc-bg-btnSEC) ;
+    border-top: 4px solid var(--selc-bg-btnSEC);
     border-radius: 16px;
     padding: 2.2rem 1.4rem;
     flex: 1;
@@ -534,23 +562,26 @@ background-color: var(--selc-bg-btnCTA);
     font-size: 2.8rem;
     font-weight: 500;
     font-family: "Poppins", sans-serif;
-    color: var(--selc-brd-card); /* vert forêt */
+    color: var(--selc-brd-card);
+    /* vert forêt */
 }
 
 /*=======================================POUR LES TRANSITIONS SUR LES CARTES=====================*/
 
-.card-article{
-    transition : transform 0.2s ease, box-shadow 0.2s ease;
+.card-article {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.card-article:hover{
+.card-article:hover {
     transform: translateY(-4px);
     box-shadow: rgb(9, 99, 42, 0.40) 0px 25px 30px -5px;
     cursor: pointer;
 }
 
 /*=======================================Espace vertical entre les sections=====================*/
-.info, .info-defi,.info-media {
+.info,
+.info-defi,
+.info-media {
     display: flex;
     flex-direction: column;
     gap: 2.4rem;
@@ -561,10 +592,11 @@ background-color: var(--selc-bg-btnCTA);
 
 /*===================================================================FOOTER==========================================================*/
 footer {
-    padding:2rem ;
+    padding: 2rem;
     margin-top: 3.2rem;
     background-color: rgb(74, 87, 105, 0.2);
-    /* border-top: solid 1px var(--selc-brd-card); */ /*à retirer pour l'instant, surcharge moins*/
+    /* border-top: solid 1px var(--selc-brd-card); */
+    /*à retirer pour l'instant, surcharge moins*/
 }
 
 footer nav ul {
@@ -574,7 +606,7 @@ footer nav ul {
     display: flex;
     gap: 2.4rem;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content: center;
 }
 
 footer nav li {
@@ -600,24 +632,122 @@ footer nav li {
     width: 2.4rem;
     height: 2.4rem;
 }
+
+/*===================================================================MENU BURGER==========================================================*/
+.js-btn-menu {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    /* margin:auto;
+    display: block; */
+}
+
+/*================ LES 3 barres span===================*/
+.js-btn-menu span {
+    position: absolute;
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #1E293B;
+    border-radius: 3px;
+    left: 0;
+    transition: 0.25s ease-in-out;
+}
+
+/*================ Poisition des 3 barres span===================*/
+.js-btn-menu span:nth-child(1) {
+    top: 25%;
+}
+
+.js-btn-menu span:nth-child(2) {
+    top: 50%;
+}
+
+.js-btn-menu span:nth-child(3) {
+    top: 75%;
+}
+
+/*================ Animation quand menu burger ouvert ===================*/
+.js-btn-menu.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.js-btn-menu.open span:nth-child(2) {
+    opacity: 0;
+    left: -32px;
+}
+
+.js-btn-menu.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg)
+}
+
 /*===================================================================RESPONSIVE==========================================================*/
-@media (min-width: 768px) {
-    .btn-menu {
+
+
+
+@media only screen and (min-width: 992px) {
+
+    /*==========================HEADER version Desktop============================*/
+    .nav-menu {
+        flex-direction: row;
+        position: static;
+        left: auto;
+        width: auto;
+        gap: 30px;
+        background-color: transparent;
+        box-shadow: none;
+        transition: none;
+    }
+
+    .nav-menu li {
+        align-self: center;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        border-bottom: none;
+    }
+
+    /*pour le changement de couleur au survol*/
+    .nav-tri:hover {
+        background-color: var(--selc-tri-color);
+        border-radius: 8px;
+    }
+
+    .nav-depot:hover {
+        background-color: var(--selc-depot-color);
+        border-radius: 8px;
+    }
+
+    .nav-repair:hover {
+        background-color: var(--selc-repair-color);
+        border-radius: 8px;
+    }
+
+    .nav-media:hover {
+        background-color: var(--selc-media-color);
+        border-radius: 8px;
+    }
+
+    .nav-defi:hover {
+        background-color: var(--selc-defi-color);
+        border-radius: 8px;
+    }
+
+
+    .js-btn-menu {
         display: none;
     }
 
-    .btn-user{
-        display: none;
-    }
-
-    .header-nav ul {
-        display: flex;
-    }
-
-    #header-btn{
+    #header-btn {
         display: block;
     }
 
+/*============================Version desktop du hero================*/
     .hero {
         position: relative;
     }
@@ -634,21 +764,37 @@ footer nav li {
         padding: 0;
     }
 
-    .card-info, .impact {
-        flex-direction:row;
+    .card-info,
+    .impact {
+        flex-direction: row;
     }
 
-    .hero-search, .btn-scan{
+    .hero-search,
+    .btn-scan {
         width: 60%;
     }
 
     .info-defi .card-icone {
-    width : 20rem;
-    height : 20rem;
+        width: 20rem;
+        height: 20rem;
     }
 
-    .info-impact{
+.info-impact {
         margin: 8rem 2rem 1.6rem 2rem;
     }
 
+}
+
+
+
+
+@media (min-width: 768px) {
+    .hero-search,
+    .btn-scan {
+        width: 70%;
+    }
+
+    main {
+        margin: 1rem 2rem;
+    }
 }

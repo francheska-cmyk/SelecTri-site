@@ -38,6 +38,6 @@ btnClear.addEventListener('click',()=>{
 //=============================================Barre de recherche focntionnelle==========================================//
 searchInput.addEventListener('input', ()=>{
     if(searchInput.value.length >=1){
-        window.location.href = "consignes.html?q="+encodeURIComponent(searchInput.value);
+        window.location.href = "../pages/consignes.html?q="+encodeURIComponent(searchInput.value);
     }console.log(window.location.href); 
 })

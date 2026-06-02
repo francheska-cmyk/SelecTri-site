@@ -10,15 +10,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="css/mainStyle.css">
     <!-- <link rel="icon" type="image/svg+xml" href="images/identite_site/favicon1.svg"> -->
     <link rel="icon" type="image/jpg" sizes="38x53" href="images/identite_site/g11.jpg">
     <link rel="apple-touch-icon" href="images/identite_site/apple-touch-favicon.png">
-
     <title>SelecTri - trier ses déchets, simplement </title>
 </head>
 
-<body class="page-layout">
+<body>
     <header>
         <nav aria-label="navigateur-principal" class="header-nav">
             <a href="index.html" class="logo">
@@ -34,9 +34,9 @@
                 <li class="nav-repair nav-item"><a href="#">Réparation</a></li>
                 <li class="nav-media nav-item"><a href="#">Médiathèque</a></li>
                 <li class="nav-defi nav-item"><a href="#">Défis</a></li>
-                <!-- <li class="nav-compte nav-item"><a href="#">Mon compte</a></li> -->
+                <li class="nav-compte nav-item"><a href="#">Mon compte</a></li>
             </ul>
-            <div class="header-burger-trigger">
+            <div> <!--pas besoin d'une classe finalement-->
                 <button class="js-btn-menu" aria-label="Ouvrir la navigation mobile" aria-expanded="false"
                     type="button">
                     <span></span>
@@ -44,10 +44,8 @@
                     <span></span>
                 </button>
             </div>
-            <button class="btn-principal" id="header-btn" type="button">connecter
-            </button>
-            <!-- <button class="btn-user" aria-label="Se connecter"><img src="images/UI_icone/user.svg" alt="">
-            </button> ajouter le compte dans le menu burger, faire apparaitre uniquement compte connecté-->
+            <button class="btn-principal" id="header-btn" type="button">connecter</button>
+            <!--à mettre plus tard avec JS mais pour un utilisateur connecté en version desktop, le bouton devient son avatar utilisateur-->
         </nav>
     </header>
     <main>
@@ -56,12 +54,20 @@
                 <h1>Trier ses déchets, simplement</h1>
                 <p>Chercher un déchet, trouver la bonne consigne et localiser le bon point de dépôt près de vous.</p>
                 <div class="hero-search">
-                    <input type="search" placeholder="Emballage, produit, objet..." value= "" autocomplete="off">
-                    <button class="btn-search" aria-label="lancer la recherche" type="button">
-                        <img src="images/UI_icone/search.svg" alt="">
+                    <input type="text" id="input-search" name="search" placeholder="Emballage, produit, objet..."
+                        value="" autocomplete="off" minlength="1">
+                    <button class="btn-clear" id="btn-clear" aria-label="effacer la recherche" type="button"
+                        aria-hidden="true">X</button>
+                    <button class="btn-search" aria-label="lancer la recherche" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#00000"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                            </path>
+                        </svg>
                     </button>
                 </div>
-                <button class="btn-scan" type="button">
+                <button class="btn-scan btn-principal" type="button">
                     <img src="images/UI_icone/barcode.svg" alt="image d'un code barre">
                     Scanner un emballage
                 </button>
@@ -72,9 +78,10 @@
             </div>
         </section>
 
-        <section class="info">
+        <section class="info horizontal-scroll">
             <h2>Comment ça fonctionne ?</h2>
             <p>SelecTri t'aide à mieux trier, déposer et comprendre tes déchets au quotidien.</p>
+            <h2>Accès rapide</h2>
             <div class="card-info">
                 <article class="card-article">
                     <div class="card-icone icone-tri">
@@ -95,7 +102,7 @@
                     </div>
                     <div class="card-titre">
                         <h3>Je dépose</h3>
-                        <p> Trouver un point de dépôt près de chez moi</p>
+                        <p>Trouver un point de dépôt près de chez moi</p>
                     </div>
                     <button class="btn-arrow" aria-label="voir la carte intéractive des dépôts de déchets"
                         type="button">
@@ -126,13 +133,10 @@
                     </div>
                     <div class="card-titre">
                         <h3>Zéro plastique jetable</h3>
-                        <p> Remplace une habitude plastique par une alternative durable : <strong>gourde, tote bag,
-                                boîte
-                                réutilisable.</strong>
-                            1 mois, un geste à la fois.</p>
+                        <p> Remplace une habitude plastique par une alternative durable : <strong>gourde, tote bag, boîte réutilisable.</strong> 
+                        1 mois, un geste à la fois.</p>
                     </div>
-                    <button class="btn-principal btn-defi" aria-label="Partciper au défi mensuel" type="button"> Je
-                        participe
+                    <button class="btn-principal btn-defi" aria-label="Partciper au défi mensuel" type="button"> Je participe
                         <img src="images/UI_icone/arrow-right.svg" alt="">
                     </button>
                 </article>
@@ -143,23 +147,23 @@
             <h2>A la une - Médiathèque</h2>
             <div class="card-info">
                 <article class="card-media">
-                    <img src="https://img.youtube.com/vi/ID_VIDEO/maxresdefault.jpg" alt="Vignette recyclage papier"
+                    <img src="https://img.youtube.com/vi/gEpgwzzln4k/hqdefault.jpg" alt="Vignette cycle de vie des déchets"
                         class="media-vignette">
                     <div class="card-titre">
-                        <h3>Recyclage papier</h3>
-                        <p>Durée : 2 min 20</p>
+                        <h3>Cycle de vie des déchets</h3>
+                        <p>Durée : 4 min 54</p>
                     </div>
-                    <button class="btn-arrow" aria-label="Voir plus d'informations sur la vidéo de recylage papier"
+                    <button class="btn-arrow" aria-label="Voir plus d'informations sur la vidéo cycle de vie des déchets"
                         type="button">
                         <img src="images/UI_icone/arrow-right.svg" alt="">
                     </button>
                 </article>
                 <article class="card-media">
-                    <img src="https://img.youtube.com/vi/ID_VIDEO/maxresdefault.jpg" alt="Vignette recyclage verre"
+                    <img src="https://img.youtube.com/vi/ZEfPpOPRJVk/hqdefault.jpg" alt="Vignette recyclage verre"
                         class="media-vignette">
                     <div class="card-titre">
                         <h3>Recyclage verre</h3>
-                        <p>Durée : 3 min 15</p>
+                        <p>Durée : 3 min 58</p>
                     </div>
                     <button class="btn-arrow" aria-label="Voir plus d'informations sur la video de recyclage verre"
                         type="button">
@@ -179,7 +183,7 @@
             </div>
         </section>
 
-        <section class="info-impact">
+        <section class="info-impact horizontal-scroll">
             <div class="titre-impact">
                 <h2>Impact collectif
                     <small> - mis à jour régulièrement</small>
@@ -208,6 +212,7 @@
     <footer>
         <nav aria-label="navigateur-secondaire">
             <ul>
+                <li> <a href="index.html"></a>Accueil</li>
                 <li><a href="#">Mentions légales</a></li>
                 <li><a href="#">Contact</a></li>
                 <li><a href="#">Cookies</a></li>

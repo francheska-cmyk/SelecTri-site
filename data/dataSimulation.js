@@ -5,7 +5,7 @@ const DECHETS = [
     categorie: "verre",
     categorieLabel: "Verre",
     poubelle: "Conteneur à verre",
-    icone: "🍾",
+    icone: "../images/illustrations/icone-bouteille-verre.png",
     description: "Le verre se recycle à l'infini sans perdre sa qualité.",
     consigne: "Déposez dans le conteneur à verre de votre quartier. Retirez le bouchon et la capsule métallique avant.",
     bonsGestes: [
@@ -21,7 +21,7 @@ const DECHETS = [
     categorie: "verre",
     categorieLabel: "Verre",
     poubelle: "Conteneur à verre (colonne verte)",
-    icone: "🫙",
+    icone: "🫙", // TODO : remplacer par un chemin PNG quand l'image sera disponible
     description: "Le verre alimentaire se recycle facilement dans les colonnes de collecte.",
     consigne: "Déposez dans le conteneur à verre. Retirez le couvercle métallique.",
     bonsGestes: [
@@ -38,7 +38,7 @@ const DECHETS = [
     categorie: "metal",
     categorieLabel: "Métal",
     poubelle: "Bac de tri jaune",
-    icone: "🥤",
+    icone: "../images/illustrations/icons8-boîte-de-conserve-48.png",
     description: "L'aluminium est l'un des matériaux les plus recyclables : recyclé en 60 jours !",
     consigne: "Mettez dans le bac de tri jaune. Écrasez-la pour gagner de la place.",
     bonsGestes: [

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche produit - SelecTri</title>
+
+    <link rel="stylesheet" href="../css/mainStyle.css">
+    <link rel="stylesheet" href="../css/consignes.css">
+
+    <link rel="icon" type="image/jpg" sizes="38x53" href="../images/identite_site/g11.jpg">
+    <link rel="apple-touch-icon" href="../images/identite_site/apple-touch-favicon.png">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="navigateur-principal" class="header-nav">
+            <a href="../index.html" class="logo">
+                <img src="../images/identite_site/leafi-logo.svg" alt="Logo du site SelecTri">
+                <span>
+                    <span class="logo-selec">Selec</span><span class="logo-tri">Tri</span>
+                </span>
+            </a>
+
+            <ul class="nav-menu">
+                <li class="nav-tri nav-item"><a href="consignes.html">Consignes de tri</a></li>
+                <li class="nav-depot nav-item"><a href="#">Points de dépôts</a></li>
+                <li class="nav-repair nav-item"><a href="#">Réparation</a></li>
+                <li class="nav-media nav-item"><a href="#">Médiathèque</a></li>
+                <li class="nav-defi nav-item"><a href="#">Défis</a></li>
+                <li class="nav-compte nav-item"><a href="#">Mon compte</a></li>
+            </ul>
+
+            <div>
+                <button class="js-btn-menu" aria-label="Ouvrir la navigation mobile" aria-expanded="false"
+                    type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <button class="btn-principal" id="header-btn" type="button">connecter</button>
+        </nav>
+    </header>
+
+    <main>
+        <nav aria-label="fil d'Ariane">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="consignes.html">Consignes de tri</a></li>
+                <li><span>Fiche produit</span></li>
+            </ol>
+        </nav>
+
+        <section id="ficheProduit" class="ficheProduit">
+            <!-- La fiche produit sera ajoutée ici avec JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="navigateur-secondaire">
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">CGU / Politique de confidentialité</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-bas">
+            <span class="rs">
+                <img src="../images/UI_icone/facebook-logo.svg" alt="logo de facebook">
+                <img src="../images/UI_icone/instagram-logo.svg" alt="logo d'instagram">
+                <img src="../images/UI_icone/x-logo.svg" alt="logo de réseau social X">
+            </span>
+
+            <span class="nom-site">
+                <span>&copy;2026</span>
+                <span class="logo-selec">Selec</span><span class="logo-tri">Tri</span>
+            </span>
+        </div>
+    </footer>
+
+    <script src="../data/dataSimulation.js"></script>
+    <script src="../js/ficheProduit.js"></script>
+</body>
+
+</html>

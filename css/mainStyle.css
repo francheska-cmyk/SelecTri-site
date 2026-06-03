@@ -157,10 +157,9 @@ header {
     list-style: none;
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     left: -100%;
-    /*eviter nav tjrs apparante, décaler vers la gauche pour faire disparaitre*/
-    top: 8rem;
+    top: 100%;
     width: 100%;
     background-color: var(--selc-bg-color);
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);

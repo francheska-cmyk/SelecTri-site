@@ -241,7 +241,7 @@ nav a {
 
 /*================ Animation quand menu burger ouvert ===================*/
 .js-btn-menu.open span:nth-child(1) {
-    top: 10px  ;
+    top: 10px;
     transform: rotate(135deg);
 }
 

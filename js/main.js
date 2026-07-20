@@ -66,7 +66,7 @@ if (searchInput && btnClear) {
         }
     }
 
-    searchInput.addEventListener('keydown', function (event) {
+    searchInput.addEventListener('', function (event) {
         if (event.key === "Enter") {
             lancerRecherche();
         }

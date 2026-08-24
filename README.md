@@ -6,6 +6,16 @@ Contrairement aux portails institutionnels souvent froids et peu engageants, Sel
 
 ---
 
+## 📊 État d'avancement
+
+| Phase | Contenu | Statut |
+|---|---|---|
+| Cadrage & conception | Cahier des charges (analyse du besoin, personas, SWOT, matrice des risques), diagramme UML *Use Case*, wireframes & mockups | ✅ Fait |
+| Développement front | Charte graphique, page d'accueil, moteur de recherche | 🔄 En cours |
+| Développement back | Comptes utilisateurs, back-office admin, PHP/POO, Docker | 🔜 À venir |
+
+---
+
 ## 🎯 Objectifs du projet
 
 - Aider les habitants de Toulouse Métropole à savoir **où et comment trier** leurs déchets
@@ -19,40 +29,23 @@ Contrairement aux portails institutionnels souvent froids et peu engageants, Sel
 
 ## ✨ Fonctionnalités clés
 
-### 🔍 Navigation et recherche d'information
-- **Barre de recherche dynamique** — recherche en temps réel parmi les consignes de tri, avec résultats renvoyant vers une fiche de consigne complète (où et comment jeter le déchet)
-- **Carte des points de dépôt** — localisation interactive des points de dépôt à proximité à partir des données ouvertes de l'**ADEME** et de **Toulouse Métropole**, avec géolocalisation de l'utilisateur et filtres par type de déchet (verre, textile, piles, biodéchets, déchetterie, etc.)
-- **Carte des réparateurs labellisés** — localisation des réparateurs éligibles au **Bonus Réparation** (données ADEME), pour favoriser la réparation dans l'esprit de la loi AGEC
+**🔍 Navigation et recherche** — Barre de recherche dynamique des consignes de tri (renvoi vers une fiche complète), carte interactive des points de dépôt (données ADEME / Toulouse Métropole, géolocalisation, filtres par type de déchet), et carte des réparateurs labellisés Bonus Réparation (loi AGEC).
 
-### 🌱 Engagement éco-responsable
-- **Défis mensuels** — proposés par l'administrateur ; l'utilisateur peut y participer, les déclarer réalisés et consulter son historique
-- **Badges** — attribution automatique selon le nombre de défis réalisés, consultables sur le profil
-- **Impact environnemental** — estimation du CO₂ économisé (à titre indicatif) en fonction des défis et tris réalisés
+**🌱 Engagement éco-responsable** — Défis mensuels avec historique, badges attribués automatiquement selon les défis réalisés, et estimation indicative du CO₂ économisé.
 
-### 👤 Gestion du compte utilisateur
-- Inscription et connexion sécurisées (mots de passe **hachés** avant stockage)
-- Déconnexion à tout moment
-- Récupération de compte par lien de réinitialisation envoyé par e-mail (durée de validité limitée)
-- Profil dynamique et personnalisé (défis réalisés, CO₂ économisé estimé, badges obtenus)
-- Modification des informations personnelles ou suppression définitive du compte
-- Gestion des comptes par l'administrateur (consultation et suppression, sans droit de modification)
+**👤 Compte utilisateur** — Inscription/connexion sécurisées (mots de passe hachés), récupération de mot de passe par e-mail, profil dynamique personnalisé, modification ou suppression du compte.
 
-### 🛠️ Administration
-- Gestion des consignes de tri (ajout, modification, suppression)
-- Gestion des défis et des badges associés (création, modification, suppression)
+**🛠️ Administration** — Back-office dédié pour gérer les consignes de tri, les défis et les badges, ainsi que les comptes utilisateurs (consultation et suppression).
 
-### 🎨 Expérience utilisateur
-- Interface **responsive** (PC, tablette, mobile)
-- Identité visuelle dédiée : charte graphique SelecTri (typographie, palette de couleurs accessible, mascotte Leafi)
-- Formulaire de contact pour questions ou signalements
+**🎨 Expérience utilisateur** — Interface responsive, identité visuelle dédiée (charte graphique, mascotte Leafi), formulaire de contact.
 
 ---
 
 ## 🎨 Identité visuelle
 
-Charte graphique **« Lime & Miel »** : palette chaude composée de 9 couleurs validées, avec un système de couleurs sémantiques par section (chaque rubrique de navigation possède une couleur signature retrouvée dans l'accordéon correspondant sur la fiche déchet). Typographies et contrastes vérifiés pour l'accessibilité.
+Charte graphique **« Lime & Miel »** : palette chaude de 9 couleurs, avec un système sémantique par section de navigation. Audit d'accessibilité **RGAA** (contrastes WCAG) et **simulation de daltonisme** réalisés sur la palette.
 
-> Les variables CSS de la charte sont centralisées dans `style.css` (custom properties).
+> Variables CSS centralisées dans `style.css`.
 
 ---
 
@@ -69,15 +62,6 @@ Charte graphique **« Lime & Miel »** : palette chaude composée de 9 couleurs 
 | Cartographie | API carto (points de dépôt ADEME / Toulouse Métropole, réparateurs Bonus Réparation) | 🔜 À venir |
 | Données ouvertes | Open data ADEME, Toulouse Métropole | 🔜 À venir |
 | Versioning | Git / GitHub — méthodologie **GitFlow** | ✅ En place |
-| Gestion de projet | Agile (backlog, user stories) | ✅ En place |
-
----
-
-## 🌿 Conformité & bonnes pratiques
-
-- **RGAA** — accessibilité numérique (contrastes, sémantique HTML, navigation clavier)
-- **RGPD** — protection des données personnelles (comptes utilisateurs, mots de passe hachés)
-- **Loi AGEC** — anti-gaspillage et économie circulaire (dispositif Bonus Réparation, contenu pédagogique)
 
 ---
 
@@ -92,6 +76,14 @@ feature/carte-depot       → carte interactive des points de collecte
 ```
 
 Les fichiers/assets partagés (charte graphique, styles communs) sont versionnés sur `develop` ; le développement spécifique à chaque fonctionnalité reste isolé sur sa branche dédiée jusqu'à validation puis fusion.
+
+---
+
+## 📸 Aperçu
+
+<!-- Ajouter les captures d'écran une fois disponibles, ex. : -->
+<!-- ![Page d'accueil](assets/screenshots/accueil.png) -->
+<!-- ![Moteur de recherche](assets/screenshots/recherche.png) -->
 
 ---
 
@@ -128,30 +120,8 @@ Le front-end actuel (HTML/CSS/JS vanilla) ne nécessite aucune installation de d
 
 ---
 
-## 🗺️ Roadmap
-
-- [x] Charte graphique
-- [x] Mise en place Git / GitFlow
-- [x] Moteur de recherche (simulation front-end)
-- [ ] Finalisation de la page d'accueil (responsive / media queries)
-- [ ] Carte des points de dépôt (données ADEME / Toulouse Métropole, géolocalisation, filtres)
-- [ ] Carte des réparateurs labellisés Bonus Réparation
-- [ ] Défis mensuels + historique
-- [ ] Badges automatiques
-- [ ] Estimation du CO₂ économisé
-- [ ] Comptes utilisateurs (inscription, connexion, récupération, profil, suppression)
-- [ ] Back-office administrateur (consignes, défis, badges, comptes)
-- [ ] Back-end PHP / POO + Docker
-- [ ] Formulaire de contact
-
----
-
 ## 👩‍💻 Auteure
 
 Projet réalisé par **Cheska**, dans le cadre du Titre Professionnel Développeur Web et Web Mobile (Bac+2).
 
 ---
-
-## 📄 Licence
-
-Projet pédagogique — usage dans le cadre de la formation.

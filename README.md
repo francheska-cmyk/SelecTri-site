@@ -102,22 +102,6 @@ SelecTri/
 └── README.md
 ```
 
-*(structure indicative, front-end actuel — évoluera avec l'ajout du back-end PHP/Docker)*
-
----
-
-## 🚀 Lancer le projet en local
-
-Le front-end actuel (HTML/CSS/JS vanilla) ne nécessite aucune installation de dépendances.
-
-1. Cloner le dépôt :
-   ```bash
-   git clone https://github.com/<ton-compte>/SelecTri.git
-   ```
-2. Ouvrir `index.html` dans un navigateur, ou utiliser une extension de type *Live Server* pour un rechargement automatique.
-
-*(Des instructions d'installation via Docker seront ajoutées une fois le back-end PHP en place.)*
-
 ---
 
 ## 👩‍💻 Auteure

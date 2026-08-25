@@ -1,3 +1,5 @@
+PROJET EN COURS DE DEVELOPPEMENT - NON TERMINE
+
 # 🍃 SelecTri
 
 **SelecTri** est une application web pédagogique de tri sélectif et de sensibilisation au recyclage, centrée sur la métropole de **Toulouse**. Le projet est développé dans le cadre du **Titre Professionnel Développeur Web et Web Mobile (Bac+2)**, en tant que projet fil rouge évalué lors d'une série d'oraux.

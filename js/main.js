@@ -115,7 +115,7 @@ function afficherApercu(recherche) {
     if (resultats.length === 0) {
         let messageErreur = document.createElement('p');
         messageErreur.classList.add('preview-empty');
-        messageErreur.textContent = "Aucun résultat trouvé";
+        messageErreur.textContent = "Aucun résultat trouvé.Ce déchet n'existe pas encore dans notre base de données. Leafi y travaille ! En attendant, réferez-vous à la catégorie correspondante à votre déchet";
 
         searchPreview.appendChild(messageErreur);
         return;

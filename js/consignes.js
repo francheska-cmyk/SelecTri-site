@@ -1,3 +1,4 @@
+
 const menuOpener = document.querySelector('.js-btn-menu');
 const navMenu = document.querySelector('.nav-menu');
 

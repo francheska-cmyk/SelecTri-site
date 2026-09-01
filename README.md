@@ -13,7 +13,7 @@ Contrairement aux portails institutionnels souvent froids et peu engageants, Sel
 | Phase | Contenu | Statut |
 |---|---|---|
 | Cadrage & conception | Cahier des charges (analyse du besoin, personas, SWOT, matrice des risques), diagramme UML *Use Case*, wireframes & mockups | ✅ Fait |
-| Développement front | Charte graphique, page d'accueil, moteur de recherche | 🔄 En cours |
+| Développement front | Charte graphique, page d'accueil, moteur de recherche, ajout des pages Consignes/Catégorie/Fiches produit | 🔄 En cours |
 | Développement back | Comptes utilisateurs, back-office admin, PHP/POO, Docker | 🔜 À venir |
 
 ---
@@ -69,16 +69,11 @@ Charte graphique **« Lime & Miel »** : palette chaude de 9 couleurs, avec un s
 
 ## 🌳 Organisation Git (GitFlow)
 
-```
 main                      → version stable / production
 develop                   → intégration des fonctionnalités
-feature/accueil           → page d'accueil
-feature/moteur-recherche  → moteur de recherche et fiches déchets
-feature/carte-depot       → carte interactive des points de collecte
+feature/auth              → connexion / inscription (à venir)
 ```
-
 Les fichiers/assets partagés (charte graphique, styles communs) sont versionnés sur `develop` ; le développement spécifique à chaque fonctionnalité reste isolé sur sa branche dédiée jusqu'à validation puis fusion.
-
 ---
 
 ## 📸 Aperçu
@@ -92,22 +87,33 @@ Les fichiers/assets partagés (charte graphique, styles communs) sont versionné
 ## 📁 Structure du projet
 
 ```
-SelecTri/
+SelecTri-site/
 ├── index.html
-├── consignes.html
-├── fiche-dechet.html
-├── style.css
-├── data.js
-├── assets/
-│   ├── images/
-│   └── icons/
-└── README.md
+├── pages/
+│   ├── consignes.html
+│   ├── categorie.html
+│   └── ficheProduit.html
+├── css/
+│   ├── mainStyle.css       (commun à toutes les pages)
+│   ├── indexStyle.css      (spécifique à l'accueil)
+│   └── consignes.css       (spécifique aux pages consignes/catégorie/fiche produit)
+├── js/
+│   ├── main.js
+│   ├── consignes.js
+│   ├── categorie.js
+│   └── ficheProduit.js
+├── data/
+│   └── dataSimulation.js   (données simulées, en attendant le back-end PHP/MySQL)
+├── images/
+│   ├── identite_site/      (logo, favicon, mascotte Leafi)
+│   ├── illustrations/      (icônes des catégories de déchets)
+│   └── UI_icone/ 
 ```
 
 ---
 
 ## 👩‍💻 Auteure
 
-Projet réalisé par **Cheska**, dans le cadre du Titre Professionnel Développeur Web et Web Mobile (Bac+2).
+Projet réalisé par **CHARLOT Francheska**, dans le cadre du Titre Professionnel Développeur Web et Web Mobile (Bac+2).
 
 ---

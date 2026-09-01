@@ -9,6 +9,7 @@ if (menuOpener && navMenu) {
         console.log(menuOpener);
         navMenu.classList.toggle('open');
     });
+
 }
 
 //=============================================== Barre de recherche ===================================================//
@@ -62,6 +63,68 @@ if (searchInput && btnClear) {
         });
     }
 }
+
+//============================================= Aperçu recherche =============================================//
+
+function afficherApercu(recherche) {
+    if (!searchPreview) {
+        return;
+    }
+
+    searchPreview.innerHTML = "";
+
+    if (recherche.length < 1) {
+        searchPreview.style.display = "none";
+        return;
+    }
+
+    let texte = recherche.toLowerCase();
+    let resultats = [];
+
+    DECHETS.forEach(function (dechet) {
+        let nom = dechet.nom.toLowerCase();
+        let categorie = dechet.categorie.toLowerCase();
+        let categorieLabel = dechet.categorieLabel.toLowerCase();
+
+        if (
+            nom.includes(texte) ||
+            categorie.includes(texte) ||
+            categorieLabel.includes(texte)
+        ) {
+            resultats.push(dechet);
+        }
+    });
+
+    searchPreview.style.display = "block";
+
+    if (resultats.length === 0) {
+        let messageErreur = document.createElement('p');
+        messageErreur.classList.add('preview-empty');
+        messageErreur.textContent = "Aucun résultat trouvé.Ce déchet n'existe pas encore dans notre base de données. Leafi y travaille ! En attendant, réferez-vous à la catégorie correspondante à votre déchet";
+
+        searchPreview.appendChild(messageErreur);
+        return;
+    }
+
+    resultats.forEach(function (dechet, index) {
+        if (index < 5) {
+            let lien = document.createElement('a');
+            lien.classList.add('preview-item');
+            lien.href = "pages/ficheProduit.html?id=" + encodeURIComponent(dechet.id);
+
+            lien.innerHTML = `
+                    <strong>${dechet.nom}</strong>
+            `;
+
+            searchPreview.appendChild(lien);
+        }
+    });
+}
+
+
+
+
+
 
 //=============================================== Fonctions résultats ===================================================//
 

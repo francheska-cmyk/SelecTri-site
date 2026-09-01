@@ -408,6 +408,10 @@ footer nav li {
         border-radius: 8px;
     }
 
+    .nav-compte{
+        display: none; 
+    }
+    
     .js-btn-menu {
         display: none;
     }

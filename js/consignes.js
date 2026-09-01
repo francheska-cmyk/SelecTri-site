@@ -1,3 +1,6 @@
+//A VERIFIER APERCU DE RECHERCHE NE FONNCTIONNE QUE SUR LA BARRE d'ACCUEIL 
+
+
 
 const menuOpener = document.querySelector('.js-btn-menu');
 const navMenu = document.querySelector('.nav-menu');

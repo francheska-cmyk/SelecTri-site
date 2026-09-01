@@ -411,13 +411,15 @@ footer nav li {
     .nav-compte{
         display: none; 
     }
-    
+
     .js-btn-menu {
         display: none;
     }
 
     #header-btn {
         display: block;
+        cursor : not-allowed; 
+        opacity: 0.85;
     }
 }
 

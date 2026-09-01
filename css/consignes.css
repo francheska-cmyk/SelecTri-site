@@ -1,3 +1,4 @@
+@import "mainStyle.css";
 
 .hero {
     margin: 2rem;
@@ -24,13 +25,43 @@
     text-align: center;
     margin: auto;
     border-radius: 50px;
-    width: 90%;
+    width: 100%;
     height: 4rem;
     gap: 0.8rem;
     padding: 0.1rem;
     font-family: "Inter", sans-serif;
     font-size: 1.2rem;
     cursor: pointer;
+}
+
+.hero-search-row {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.btn-back {
+    flex-shrink: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.btn-back:hover {
+    background-color: rgba(9, 99, 42, 0.10);
+}
+
+.btn-back img {
+    width: 2rem;
+    height: 2rem;
 }
 
 .hero-search {
@@ -105,7 +136,7 @@
     text-decoration: underline;
 }
 
-/*=============================================== RÉSULTATS RECHERCHE ===============================================*/
+/*=============================================== RESULTAT RECHERCHE ===============================================*/
 
 #section-resultats {
     margin: 1rem;
@@ -190,17 +221,71 @@
     margin: 1rem;
 }
 
+.categories-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.categories-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--selc-text-color);
+    cursor: pointer;
+    padding: 0.4rem;
+}
+
+.categories-dropdown-toggle .icon-caret {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.categories-dropdown-toggle[aria-expanded="true"] .icon-caret {
+    transform: rotate(180deg);
+}
+
+.categories-dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    background-color: var(--selc-bg-card);
+    border: 1px solid var(--selc-brd-card);
+    border-radius: 14px;
+    padding: 0.6rem;
+    box-shadow: rgb(9, 99, 42, 0.16) 0px 12px 20px -8px;
+}
+
+.categories-dropdown-menu a {
+    padding: 0.8rem 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--selc-text-color);
+    font-family: "Inter", sans-serif;
+}
+
+.categories-dropdown-menu a:hover {
+    background-color: var(--selc-tri-color);
+}
+
 .categorie-type {
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin: 0.5rem;
-    gap: 1rem;
+    gap: 1.8rem;
+    overflow-x: auto;
+    padding: 0.8rem 0.2rem;
+    margin: 0.2rem 0;
+    scrollbar-width: none;
+}
 
-    & img {
-        width: 32px;
-        height: 32px;
-    }
+.categorie-type::-webkit-scrollbar {
+    display: none;
 }
 
 .categorie-card {
@@ -208,24 +293,89 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex: 1;
+    flex: 0 0 auto;
+    width: 12rem;
+    height: 12rem;
     padding: 1rem;
     background-color: var(--selc-bg-card);
-    border-radius: 10px;
-    border: 1px solid var(--selc-brd-card);
-    &:hover {
-        box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
-        background-color: var(--selc-tri-color);
-        transform: translateY(-4px);
-        cursor: pointer;
-    };
-    & h3 {
-        font-size: 1rem;
-        text-align: center;
-    }
+    border-radius: 14px;
+    border: var(--selc-brd-card);
+    text-decoration: none;
+    color: var(--selc-text-color);
 }
 
-/*================================================ CARDS "LES PLUS RECHERCHÉS" ==================================*/
+.categorie-card:hover {
+    background-color: var(--selc-tri-color);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.categorie-card img {
+    width: 32px;
+    height: 32px;
+}
+
+/*================================================ CATEGORIE(page catégorie) ==================================*/
+.categorie-featured-card {
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
+    padding: 1.4rem;
+    margin: 1rem;
+    background-color: var(--selc-bg-card);
+    border: 1px solid var(--selc-brd-card);
+    border-radius: 18px;
+    box-shadow: rgb(9, 99, 42, 0.16) 0px 12px 20px -8px;
+}
+
+.categorie-icone-large {
+    flex-shrink: 0;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 12px;
+    border: 1px solid var(--selc-brd-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorie-icone-large img {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.categorie-featured-card p {
+    color: #4A5769;
+    font-family: "Inter", sans-serif;
+}
+
+/*================================================ POUR FILTRE TRI ==================================*/
+.filtre-tri {
+    display: flex;
+    gap: 0.8rem;
+    margin: 1rem;
+    overflow-x: auto;
+}
+
+.chip {
+    flex-shrink: 0;
+    padding: 0.7rem 1.6rem;
+    border-radius: 40px;
+    border: none;
+    background-color: rgba(74, 87, 105, 0.15);
+    color: var(--selc-text-color);
+    font-family: "Inter", sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.chip.chip-active {
+    background-color: var(--selc-bg-btnCTA);
+    border: 1.5px solid var(--selc-brd-btnCTA);
+}
+
+/*================================================ CARDS "LES PLUS RECHERCHES" ==================================*/
 .card-categoriePopulaire {
     display: flex;
     flex-direction: column;
@@ -401,6 +551,168 @@
     border-radius: 16px;
 }
 
+/*=============================================== ACCORDEONS FICHE PRODUIT ===============================================*/
+
+.accordion {
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.4rem;
+    border: none;
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+.accordion-header .icon-chevron {
+    width: 1.4rem;
+    height: 1.4rem;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+}
+
+.accordion-header[aria-expanded="true"] .icon-chevron {
+    transform: rotate(180deg);
+}
+
+.accordion-bleu .accordion-header {
+    background-color: #10569C;
+}
+
+.accordion-vert .accordion-header {
+    background-color: #09632A;
+}
+
+.accordion-body {
+    background-color: var(--selc-bg-card);
+    border: 1px solid var(--selc-brd-card);
+    border-top: none;
+    padding: 1.2rem 1.4rem;
+}
+
+.accordion-content {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.accordion-content img {
+    width: 4rem;
+    height: 4rem;
+    flex-shrink: 0;
+}
+
+.accordion-fermer {
+    display: block;
+    margin-top: 0.8rem;
+    margin-left: auto;
+    width: fit-content;
+    background: none;
+    border: none;
+    color: #4A5769;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+}
+
+/*=============================================== BANNIERE POINTS DE COLLECTE ===============================================*/
+
+.points-collecte-banniere {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 1.4rem;
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+    background-color: var(--selc-bg-btnSEC);
+    color: #FFFFFF;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    cursor: not-allowed;
+    opacity: 0.85;
+}
+
+.points-collecte-banniere .lien-carte {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+/*=============================================== MESSAGE LEAFI (IMPACT CO2) ===============================================*/
+
+.leafi-message {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background-color: rgba(9, 99, 42, 0.08);
+    border: 1px solid rgba(9, 99, 42, 0.25);
+    padding: 1.2rem 1.4rem;
+    border-radius: 16px;
+    margin-bottom: 1.2rem;
+}
+
+.leafi-message img {
+    width: 4.4rem;
+    height: 4.4rem;
+    flex-shrink: 0;
+}
+
+.leafi-message p {
+    font-family: "Inter", sans-serif;
+    color: var(--selc-text-color);
+}
+
+/*=============================================== DANS LA MÊME CATÉGORIE ===============================================*/
+
+.meme-categorie {
+    margin-bottom: 1.2rem;
+}
+
+.meme-categorie h2 {
+    margin-bottom: 0.8rem;
+}
+
+.meme-categorie-liste {
+    display: flex;
+    gap: 1.2rem;
+    overflow-x: auto;
+    padding-bottom: 0.4rem;
+    scrollbar-width: thin;
+}
+
+.mini-card-dechet {
+    flex: 0 0 auto;
+    width: 16rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem;
+    background-color: var(--selc-bg-card);
+    border: 1px solid var(--selc-brd-card);
+    border-radius: 14px;
+}
+
+.mini-card-dechet img {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.mini-card-dechet h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+}
+
+.mini-card-dechet .btn-voirPlus {
+    align-self: flex-end;
+}
+
 .btn-retour {
     display: inline-flex;
     justify-content: center;
@@ -442,7 +754,6 @@
 /*====================================== RESPONSIVE ==============================================*/
 
 @media screen and (max-width: 768px) {
-
     .card-dechet-resultat {
         flex-direction: column;
         align-items: flex-start;

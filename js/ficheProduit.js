@@ -9,6 +9,14 @@ if (menuOpener && navMenu) {
     });
 }
 
+
+//============================Bouton retour================//
+let btnBack = document.getElementById('btn-black'); 
+if(btnBack){
+    btnBack.addEventListener('click', function(){
+        window.history.back();
+    })
+}
 //=============================================== Fiche produit ===================================================//
 
 let ficheProduit = document.getElementById('ficheProduit');

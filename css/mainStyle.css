@@ -110,6 +110,12 @@ header {
 
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
 .header-nav {
     display: flex;
     justify-content: space-between;
@@ -149,7 +155,7 @@ header {
 /*=============================================================NAVIGATION=============================================================*/
 
 #header-btn {
-    display: none;
+    display: block;
 }
 
 .nav-menu {
@@ -254,7 +260,6 @@ nav a {
     transform: rotate(-135deg)
 }
 
-
 /*=============================================== APERCU RECHERCHE ===============================================*/
 
 .search-preview {
@@ -354,7 +359,7 @@ footer nav li {
     height: 2.4rem;
 }
 
-/*=============================================================RESPONSIVE=============================================================*/
+/*==================================================================RESPONSIVE==========================================================*/
 
 @media only screen and (min-width: 992px) {
 

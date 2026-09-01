@@ -16,23 +16,24 @@
 <body>
     <header>
         <nav aria-label="navigateur-principal" class="header-nav">
-            <a href="../index.html" class="logo">
+            <a href="index.html" class="logo">
                 <img src="../images/identite_site/leafi-logo.svg" alt="Logo du site SelecTri">
-                <span>
+                <span> <!--fonctionne sans la classe "logo-nom" pour l'instant -->
                     <span class="logo-selec">Selec</span><span class="logo-tri">Tri</span>
+                    <!--mettre les deux spans sur la meme ligne évite que le navigateur un interprète un retour à la ligne entre les deux élements inline-->
                 </span>
             </a>
-
             <ul class="nav-menu">
-                <li class="nav-tri nav-item"><a href="consignes.html">Consignes de tri</a></li>
+                <li class="nav-tri nav-item"><a href="#">Consignes de tri</a></li>
                 <li class="nav-depot nav-item"><a href="#">Points de dépôts</a></li>
                 <li class="nav-repair nav-item"><a href="#">Réparation</a></li>
                 <li class="nav-media nav-item"><a href="#">Médiathèque</a></li>
                 <li class="nav-defi nav-item"><a href="#">Défis</a></li>
                 <li class="nav-compte nav-item"><a href="#">Mon compte</a></li>
             </ul>
-
-            <div>
+        <div class="header-actions">
+                <button class="btn-principal" id="header-btn" type="button">Se connecter</button>
+                <!--à mettre plus tard avec JS mais pour un utilisateur connecté en version desktop, le bouton devient son avatar utilisateur-->
                 <button class="js-btn-menu" aria-label="Ouvrir la navigation mobile" aria-expanded="false"
                     type="button">
                     <span></span>
@@ -40,12 +41,34 @@
                     <span></span>
                 </button>
             </div>
-
-            <button class="btn-principal" id="header-btn" type="button">connecter</button>
         </nav>
     </header>
 
     <main>
+        <h2 style ="color:red;"><strong><em>PRESENTER COMME APERCU, SITE EN COURS DE CONSTRUCTION </em></strong></h2>
+
+        <section class="hero">
+            <div class="hero-search-row">
+                <!-- <button class="btn-back" id="btn-back" type="button" aria-label="Retour">
+                    <img src="../images/UI_icone/arrow-left.svg" alt="">
+                </button> --> <!-- Changement par rapport à la maquette, non utile ^pour l'instant-->
+                <div class="hero-search">
+                    <input type="text" id="input-search" name="search" placeholder="Emballage, produit, objet..." value=""
+                        autocomplete="off" minlength="1">
+                    <button class="btn-clear" id="btn-clear" aria-label="effacer la recherche" type="reset"
+                        aria-hidden="true">X</button>
+                    <button class="btn-search" aria-label="lancer la recherche" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#00000"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <nav aria-label="fil d'Ariane">
             <ol class="breadcrumb">
                 <li><a href="../index.html">Accueil</a></li>

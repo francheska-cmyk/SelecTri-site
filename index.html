@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- ATTENTION PENSER A HARMONISER LE NOM DE MES CLASS ET ID SOIT ANGLAIS SOIT FRANCAIS PARTOUT-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="css/mainStyle.css">
+    <!-- <link rel="icon" type="image/svg+xml" href="images/identite_site/favicon1.svg"> -->
+    <link rel="icon" type="image/jpg" sizes="38x53" href="images/identite_site/g11.jpg">
+    <link rel="apple-touch-icon" href="images/identite_site/apple-touch-favicon.png">
+    <title>SelecTri - trier ses déchets, simplement </title>
+</head>
+
+<body>
+    <header>
+        <nav aria-label="navigateur-principal" class="header-nav">
+            <a href="/index.html" class="logo">
+                <img src="images/identite_site/leafi-logo.svg" alt="Logo du site SelecTri">
+                <span> <!--fonctionne sans la classe "logo-nom" pour l'instant -->
+                    <span class="logo-selec">Selec</span><span class="logo-tri">Tri</span>
+                    <!--mettre les deux spans sur la meme ligne évite que le navigateur un interprète un retour à la ligne entre les deux élements inline-->
+                </span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-tri nav-item"><a href="/pages/consignes.html">Consignes de tri</a></li>
+                <li class="nav-depot nav-item"><a href="#">Points de dépôts</a></li>
+                <li class="nav-repair nav-item"><a href="#">Réparation</a></li>
+                <li class="nav-media nav-item"><a href="#">Médiathèque</a></li>
+                <li class="nav-defi nav-item"><a href="#">Défis</a></li>
+                <li class="nav-compte nav-item"><a href="#">Mon compte</a></li>
+            </ul>
+        <div class="header-actions">
+                <button class="btn-principal" id="header-btn" type="button" title ="Page de connexion à venir en MVC PHP-POO">Se connecter</button>
+                <!--à mettre plus tard avec JS mais pour un utilisateur connecté en version desktop, le bouton devient son avatar utilisateur-->
+                <button class="js-btn-menu" aria-label="Ouvrir la navigation mobile" aria-expanded="false"
+                    type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h2 style ="color:red;"><strong><em>PRESENTER COMME APERCU, SITE EN COURS DE CONSTRUCTION </em></strong></h2>
+
+        <section class="hero">
+            <div class="hero-card">
+                <h1>Trier ses déchets, simplement</h1>
+                <p>Chercher un déchet, trouver la bonne consigne et localiser le bon point de dépôt près de vous.</p>
+                <div class="hero-search">
+                    <input type="text" id="input-search" name="search" placeholder="Emballage, produit, objet..."
+                        value="" autocomplete="off" minlength="1">
+                    <button class="btn-clear" id="btn-clear" aria-label="effacer la recherche" type="reset"
+                        aria-hidden="true">X</button>
+                    <button class="btn-search" aria-label="lancer la recherche" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#00000"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+                <div id="search-preview" class="search-preview"></div>
+                <button class="btn-scan btn-principal" type="button">
+                    <img src="images/UI_icone/barcode.svg" alt="image d'un code barre">
+                    Scanner un emballage
+                </button>
+            </div>
+            <div class="hero-leafi">
+                <p> Hello, je suis Leafi. Bienvenue !</p>
+                <img src="images/identite_site/leafi-classique.svg" alt="image de Leafi :  la mascotte du site ">
+            </div>
+        </section>
+
+        <section class="info horizontal-scroll">
+            <h2>Comment ça fonctionne ?</h2>
+            <p>SelecTri t'aide à mieux trier, déposer et comprendre tes déchets au quotidien.</p>
+            <h2>Accès rapide</h2>
+            <div class="card-info">
+                <article class="card-article">
+                    <div class="card-icone icone-tri">
+                        <img src="images/UI_icone/recycle.svg" alt="image du symbole de recyclage">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Je trie</h3>
+                        <p> Consulter les bons gestes de tri</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="voir les consignes de tri" type="button">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+                <article class="card-article">
+                    <div class="card-icone icone-depot">
+                        <img src="images/UI_icone/map.svg" alt="icone carte" class="icone-map">
+                        <img src="images/UI_icone/pin-alt-duotone-line_ (1).png" alt="icone pin" class="icone-pin">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Je dépose</h3>
+                        <p>Trouver un point de dépôt près de chez moi</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="voir la carte intéractive des dépôts de déchets"
+                        type="button">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+                <article class="card-article">
+                    <div class="card-icone icone-media">
+                        <img src="images/UI_icone/lightbulb-3.svg" alt="icone d'une ampoule">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Je comprends</h3>
+                        <p> Explorer les vidéos et ressources utiles</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="voir la médiathèque" type="button">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-defi">
+            <h2>Défi du mois</h2>
+            <div class="card-info">
+                <article class="card-article">
+                    <div class="card-icone">
+                        <img src="images/illustrations/plastic-free.jpg" alt="image du recyclage du papier">
+                    </div>
+                    <div class="card-titre">
+                        <h3>Zéro plastique jetable</h3>
+                        <p> Remplace une habitude plastique par une alternative durable : <strong>gourde, tote bag, boîte réutilisable.</strong> 
+                        1 mois, un geste à la fois.</p>
+                    </div>
+                    <button class="btn-principal btn-defi" aria-label="Partciper au défi mensuel" type="button"> Je participe
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-media">
+            <h2>A la une - Médiathèque</h2>
+            <div class="card-info">
+                <article class="card-media">
+                    <img src="https://img.youtube.com/vi/gEpgwzzln4k/hqdefault.jpg" alt="Vignette cycle de vie des déchets"
+                        class="media-vignette">
+                    <div class="card-titre">
+                        <h3>Cycle de vie des déchets</h3>
+                        <p>Durée : 4 min 54</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="Voir plus d'informations sur la vidéo cycle de vie des déchets"
+                        type="button">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+                <article class="card-media">
+                    <img src="https://img.youtube.com/vi/ZEfPpOPRJVk/hqdefault.jpg" alt="Vignette recyclage verre"
+                        class="media-vignette">
+                    <div class="card-titre">
+                        <h3>Recyclage verre</h3>
+                        <p>Durée : 3 min 58</p>
+                    </div>
+                    <button class="btn-arrow" aria-label="Voir plus d'informations sur la video de recyclage verre"
+                        type="button">
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+                <article class="card-media">
+                    <div class="card-titre">
+                        <h3>Voir toute la Médiathèque</h3>
+                    </div>
+                    <button class="btn-principal btn-media" aria-label="Accéder à tout le contenu de la mediathèque"
+                        type="button">
+                        Accéder
+                        <img src="images/UI_icone/arrow-right.svg" alt="">
+                    </button>
+                </article>
+            </div>
+        </section>
+
+        <section class="info-impact horizontal-scroll">
+            <div class="titre-impact">
+                <h2>Impact collectif
+                    <small> - mis à jour régulièrement</small>
+                </h2>
+            </div>
+            <div class="impact">
+                <div class="card-impact">
+                    <h3>kg mensuel recyclés</h3>
+                    <p>125 kg</p>
+                </div>
+                <div class="card-impact">
+                    <h3>Trinautes actifs</h3>
+                    <p>58</p>
+                </div>
+                <div class="card-impact">
+                    <h3>Défis relevés</h3>
+                    <p>167</p>
+                </div>
+                <div class="card-impact">
+                    <h3>Points de dépôts</h3>
+                    <p>300 points référencés</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <nav aria-label="navigateur-secondaire">
+            <ul>
+                <li> <a href="index.html"></a>Accueil</li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">CGU / Politique de confidentialité </a></li>
+            </ul>
+        </nav>
+        <div class="footer-bas">
+            <span class="rs">
+                <img src="images/UI_icone/facebook-logo.svg" alt="logo de facebook">
+                <img src="images/UI_icone/instagram-logo.svg" alt="logo d'instagram">
+                <img src="images/UI_icone/x-logo.svg" alt="logo de réseau social X">
+            </span>
+            <span class="nom-site">
+                <span>&copy;2026</span>
+                <span class="logo-selec">Selec</span><span class="logo-tri">Tri</span>
+            </span>
+        </div>
+
+    </footer>
+    <script src="data/dataSimulation.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

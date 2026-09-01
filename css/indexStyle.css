@@ -1,0 +1,816 @@
+/*Vérifier si l'unité REM peut être utilisé pour les height et width*/
+@import "mainStyle.css";
+
+/*======================================================================HERO===============================================================*/
+/*============================HERO card=====================================*/
+.hero {
+    margin: 2rem;
+}
+
+.hero-card {
+    background-color: var(--selc-bg-card);
+    padding: 1.6rem;
+    margin-bottom: 2.5rem;
+    border: solid 1px var(--selc-brd-card);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-around;
+    text-align: center;
+    box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
+}
+
+/*==================bloc recherche & scan version mobile====================*/
+.hero-search,
+.btn-scan {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    /*pour avoir au centre les deux barres*/
+    border-radius: 50px;
+    width: 90%;
+    height: 4rem;
+    gap: 0.8rem;
+    padding: 0.1rem;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    cursor: pointer;
+    ;
+}
+
+.hero-search {
+    background-color: rgb(240, 239, 239);
+}
+
+.btn-scan {
+    background-color: var(--selc-bg-btnCTA);
+    align-items: center;
+    /*donne icone + texte centré mais à gauche*/
+}
+
+.btn-search {
+    border: none;
+    border-radius: 50px;
+    background-color: var(--selc-bg-btnCTA);
+    height: 100%;
+    aspect-ratio: 1/1;
+    /*rond parfait*/
+    display: flex;
+    align-items: center;
+    padding-left: 0.8rem;
+}
+
+.hero-search input {
+    border: none;
+    outline: none;
+    /*ajouter outline en plus de border pour être sur que la bordure n'apparait pas au survol*/
+    width: 100%;
+    font-family: "Inter", sans-serif;
+    font-size: 1.2rem;
+    background: transparent;
+    /*retire le fond blanc de l'input */
+    text-align: center;
+}
+
+#btn-clear {
+    display: none;
+    align-items: center;
+    background: none;
+    border: none;
+    color: #10569C;
+    margin-right: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/*================================HERO-leafi=========================*/
+
+@keyframes leafiAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.hero-leafi {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.4rem;
+    padding: 0.5rem 0;
+    animation-name: leafiAppear;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+    & p {
+        padding: 0.5rem 0.8rem;
+        font-size: 1.8rem;
+    }
+
+    & img {
+        width: 10rem;
+        height: auto;
+    }
+}
+
+/*=======================================================SECTION- Comment ça marche=====================================================*/
+
+.info {
+    align-items: center;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    width: 100%;
+}
+
+
+.card-article {
+    background-color: var(--selc-bg-card);
+    padding: 1.6rem;
+    border: solid 1px var(--selc-brd-card);
+    border-radius: 25px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    flex: 1;
+    /*pour que la taille des enfants (card-article) suit qd la card-info grandit ou reduit. flex-grow, shrink et basis (0% ici)*/
+    gap: 1.6rem;
+    box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
+    position: relative;
+    /*pour avoir mon bouton toujours au meme endroit dans la card*/
+    min-height: 20rem;
+    overflow: hidden;
+    /*empêche le button flèche de sortir de la card*/
+}
+
+.card-icone {
+    border-radius: 12px;
+    padding: 1.2rem;
+    display: flex;
+    align-self: flex-start;
+    justify-content: center;
+    width: 7rem;
+    height: 7rem;
+}
+
+.icone-tri img {
+    width: 6rem;
+    height: 6rem;
+    filter: brightness(0) saturate(100%) invert(29%) sepia(26%) saturate(1672%) hue-rotate(92deg) brightness(92%) contrast(93%);
+}
+
+.icone-depot {
+    position: relative;
+}
+
+.icone-map {
+    width: 6rem;
+    height: 6rem;
+    filter: brightness(0) saturate(100%) invert(12%) sepia(83%) saturate(3908%) hue-rotate(199deg) brightness(111%) contrast(87%);
+}
+
+.icone-pin {
+    position: absolute;
+    bottom: -1rem;
+    right: 0;
+    background-color: #FFFFFF;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    /* pour avoir un cercle parfait, cercle avec toute la taille de l'élément*/
+}
+
+.icone-media img {
+    width: 6rem;
+    height: 6rem;
+    filter: brightness(0) saturate(100%) invert(45%) sepia(97%) saturate(483%) hue-rotate(344deg) brightness(99%) contrast(105%);
+}
+
+
+.card-titre {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-self: center;
+    /*titre centré dans sa colonne*/
+}
+
+.btn-arrow {
+    background-color: var(--selc-bg-btnCTA);
+    border: 1.5px solid var(--selc-brd-btnCTA);
+    border-radius: 50px;
+    width: 6rem;
+    height: 3rem;
+    display: flex;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: center;
+    /*centr!e la flèche dans le button*/
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.btn-arrow img {
+    width: 2rem;
+    height: 2rem;
+}
+
+/*======================================SCROLL DE LA SECTION====================================*/
+.horizontal-scroll {
+    overflow-x: auto;
+    /* rend l'élément scrollable */
+    scroll-snap-type: x mandatory;
+    /*pour un scroll par carte */
+}
+
+.horizontal-scroll .card-info,
+.horizontal-scroll .impact {
+    flex-direction: row;
+    /* cartes côte à côte */
+    flex-wrap: nowrap;
+    /* empêche le retour à la ligne */
+}
+
+.horizontal-scroll .card-article,
+.horizontal-scroll .card-impact {
+    min-width: 30rem;
+    /* largeur fixe pour forcer débordement sinon card très retreci */
+    /* flex-shrink: 0; */
+}
+
+
+/*=======================================================SECTION- Défi=========================================================*/
+.info-defi .card-article {
+    display: grid;
+    grid-template-rows: repeat(4.1fr);
+    grid-template-columns: repeat(4.1fr);
+    padding: 0;
+    /*pour agencer image et texte */
+    gap: 1.2rem;
+    max-width: 60rem;
+}
+
+.info-defi .card-icone {
+    grid-row: 1/4;
+    grid-column: 1;
+    width: 100%;
+    height: 22rem;
+    padding: 0;
+    /*pour que image prenne toute place gauche*/
+
+}
+
+.info-defi .card-icone img {
+    width: 100%;
+    height: 100%;
+}
+
+.info-defi .card-titre {
+    grid-row: 2;
+    grid-column: 2;
+    padding: 1.6rem;
+    text-align: start;
+    gap: 2rem;
+}
+
+
+.info-defi .btn-defi {
+    grid-row: 3;
+    grid-column: 2;
+    justify-self: end;
+    margin: 0 1.6rem 1.6rem 0;
+}
+
+.btn-defi,
+.btn-media {
+    display: flex;
+    align-items: center;
+    /*aligne contenu intérieur (text + flèche), centré verticalement*/
+    gap: 0.8rem;
+    /*gap entre text et fleche*/
+}
+
+
+/*=======================================================SECTION- MEDIATHEQUE=========================================================*/
+.card-media {
+    background-color: var(--selc-bg-card);
+    border: solid 1px var(--selc-brd-card);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    /*pour que la taille des enfants (card-article) suit qd la card-info grandit ou reduit. flex-grow, shrink et basis (0% ici)*/
+    gap: 1.6rem;
+    box-shadow: rgb(9, 99, 42, 0.30) 0px 20px 25px -5px;
+    position: relative;
+    /*pour avoir mon bouton toujours au meme endroit dans la card*/
+    max-height: 30rem;
+    overflow: hidden;
+    /*empêche le button flèche de sortir de la card*/
+    max-width: 60rem;
+}
+
+.card-media .card-titre {
+    margin: 0.5rem 2rem 2.5rem;
+    align-self: stretch;
+}
+
+.card-media .btn-arrow {
+    position: absolute;
+    /*eviter sort de la card*/
+    bottom: 1rem;
+    /*pour garder btn en bas*/
+    right: 3rem;
+    /*decaler de la bordure droite*/
+}
+
+/*pour avoir voir toute la médiathèque centre*/
+.card-media:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.card-media:last-child .card-titre {
+    margin: 0;
+    align-self: center;
+    text-align: center;
+}
+
+.card-media:last-child .btn-principal {
+    align-self: center;
+}
+
+.media-vignette {
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+}
+
+/*=======================================================SECTION- IMPACT=========================================================*/
+
+.info-impact {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin: 2rem 1rem 1.6rem 1rem;
+    padding: 2rem;
+}
+
+.impact {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    width: 100%;
+}
+
+.card-impact {
+    background-color: var(--selc-bg-card);
+    border: solid 1px var(--selc-brd-card);
+    border-top: 4px solid var(--selc-bg-btnSEC);
+    border-radius: 16px;
+    padding: 2.2rem 1.4rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.6rem;
+    /* Pas d'ombre forte car carte non cliquable */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.card-impact h3 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--selc-linked-color);
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+
+.card-impact p {
+    font-size: 2.8rem;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: var(--selc-brd-card);
+}
+
+/*=======================================POUR LES TRANSITIONS SUR LES CARTES=====================*/
+
+.card-article,
+.card-media {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-article:hover,
+.card-media:hover {
+    transform: translateY(-4px);
+    box-shadow: rgb(9, 99, 42, 0.40) 0px 25px 30px -5px;
+    cursor: pointer;
+}
+
+/*=======================================Espace vertical entre les sections=====================*/
+.info,
+.info-defi,
+.info-media {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    margin: 3.2rem 2rem;
+    padding: 2rem;
+}
+
+
+
+
+/*========================================================== Responsive BREAKPOINT < 576px=======================================================*/
+
+@media only screen and (max-width: 575px) {
+
+/*=======================HEADER=============================== */
+    .header-nav {
+        margin: 0.4rem;
+        padding: 0.2rem;
+    }
+
+    .logo img {
+        height: 4.5rem;
+    }
+
+    .logo-selec,
+    .logo-tri {
+        font-size: 2.8rem;
+    }
+
+/*==============================MAIN et SECTIONS==========================*/
+    main {
+        margin: 1rem;
+    }
+
+    .hero {
+        margin: 0.8rem;
+    }
+
+    .hero-card {
+        padding: 1.2rem;
+        gap: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+/* =================BARRE DE RECHERCHE & SCAN=========================== */
+    .hero-search,
+    .btn-scan {
+        width: 100%;
+    }
+
+/* ==================SECTIONS info, défi, media========================== */
+    .info,
+    .info-defi,
+    .info-media {
+        margin: 1.6rem 0.8rem;
+        padding: 1.2rem;
+        gap: 1.6rem;
+    }
+
+/* ===========================CARD DEFI===================================*/
+    .info-defi .card-article {
+        max-width: 100%;
+    }
+
+    .info-defi .card-icone {
+        height: 18rem;
+    }
+
+/*===========================CARD MEDIA==================================== */
+    .card-media {
+        max-width: 100%;
+    }
+
+/* ====================SECTION IMPACT====================================== */
+    .info-impact {
+        margin: 1.6rem 0.5rem 1rem 0.5rem;
+        padding: 1.2rem;
+        gap: 1.6rem;
+    }
+
+    .card-impact p {
+        font-size: 2.2rem;
+    }
+
+    .card-impact h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/*================================================ Responsive BREAKPOINT >= 576px et < 768px=======================================================*/
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+
+/*=======================HEADER=============================== */
+    .logo img {
+        height: 5.5rem;
+    }
+
+/*==============================HERO==========================*/
+    .hero-card {
+        padding: 2rem;
+        gap: 1.4rem;
+    }
+
+/* =================BARRE DE RECHERCHE & SCAN=========================== */
+    .hero-search,
+    .btn-scan {
+        width: 85%;
+    }
+
+/* ==================SECTIONS info, défi, media========================== */
+    .info,
+    .info-defi,
+    .info-media {
+        margin: 2.4rem 1.6rem;
+        padding: 1.6rem;
+    }
+
+/* ==========================CARD DEFI===================================*/
+    .info-defi .card-icone {
+        height: 24rem;
+    }
+
+ /* ====================SECTION IMPACT====================================== */
+    .info-impact {
+        margin: 2rem 1rem 1.4rem 1rem;
+        padding: 1.6rem;
+    }
+
+    .card-impact p {
+        font-size: 2.4rem;
+    }
+}
+
+
+/*================================ Responsive BREAKPOINT >= 768 px et 992px================================================*/
+
+
+
+/*======================================== Responsive BREAKPOINT >= 992px et < 1280px =========================================*/
+
+@media only screen and (min-width: 992px) and (max-width: 1279px) {
+
+    /*=======================NAVIGATION desktop=============================== */
+    .js-btn-menu {
+        display: none;
+    }
+
+    #header-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        flex-direction: row;
+        position: static;
+        left: auto;
+        width: auto;
+        gap: 2rem;
+        background-color: transparent;
+        box-shadow: none;
+        transition: none;
+    }
+
+    .nav-menu li {
+        padding: 0.8rem 1rem;
+        border-bottom: none;
+    }
+
+    .nav-tri:hover { background-color: var(--selc-tri-color); border-radius: 8px; }
+    .nav-depot:hover { background-color: var(--selc-depot-color); border-radius: 8px; }
+    .nav-repair:hover { background-color: var(--selc-repair-color); border-radius: 8px; }
+    .nav-media:hover { background-color: var(--selc-media-color); border-radius: 8px; }
+    .nav-defi:hover { background-color: var(--selc-defi-color); border-radius: 8px; }
+    .nav-compte:hover { background-color: var(--selc-compte-color); border-radius: 8px; }
+
+    /*=======================HERO=============================== */
+    .hero {
+        position: relative;
+    }
+
+    .hero-card {
+        padding: 3rem;
+        padding-bottom: 16rem;
+        margin-bottom: 0;
+    }
+
+    .hero-leafi {
+        position: absolute;
+        right: 2rem;
+        bottom: 1.5rem;
+        padding: 0;
+    }
+
+    .hero-leafi img {
+        width: 14rem;
+    }
+
+    /* =================BARRE DE RECHERCHE & SCAN=========================== */
+    .hero-search, .btn-scan {
+        width: 60%;
+    }
+
+    h1 { font-size: 2.4rem; }
+    h2 { font-size: 2rem; }
+
+    /* ===CARDS accès rapide : 3 par ligne, suppression du scroll====== */
+    .horizontal-scroll {
+        overflow-x: visible;
+        scroll-snap-type: none;
+    }
+
+    .horizontal-scroll .card-info {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .horizontal-scroll .card-article {
+        min-width: auto;
+        flex: 1;
+    }
+
+    /* ==================SECTIONS info, défi, media========================== */
+    .info, .info-defi, .info-media {
+        margin: 4rem 3.2rem;
+        padding: 2rem;
+    }
+
+    /* ===CARDS MEDIA : en ligne====================================== */
+    .info-media .card-info {
+        flex-direction: row;
+    }
+
+    .card-media {
+        max-width: none;
+        flex: 1;
+    }
+
+    /* ===========================CARD DEFI===================================*/
+    .info-defi .card-article {
+        max-width: 100%;
+    }
+
+    .info-defi .card-icone {
+        height: 28rem;
+        width: 28rem;
+        flex-shrink: 0;
+    }
+
+    /* ====================SECTION IMPACT====================================== */
+    .info-impact {
+        margin: 6rem 3.2rem 2rem 3.2rem;
+    }
+
+    .card-impact p {
+        font-size: 2.8rem;
+    }
+}
+
+
+/*======================================= Responsive BREAKPOINT >= 1280px et < 1440px =========================================*/
+
+
+
+
+
+
+
+
+
+/* @media only screen and (min-width: 992px) {
+
+    .nav-menu {
+        flex-direction: row;
+        position: static;
+        left: auto;
+        width: auto;
+        gap: 30px;
+        background-color: transparent;
+        box-shadow: none;
+        transition: none;
+    }
+
+    .nav-menu li {
+        align-self: center;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        border-bottom: none;
+    }
+
+    /*pour le changement de couleur au survol*/
+/* .nav-tri:hover {
+        background-color: var(--selc-tri-color);
+        border-radius: 8px;
+    }
+
+    .nav-depot:hover {
+        background-color: var(--selc-depot-color);
+        border-radius: 8px;
+    }
+
+    .nav-repair:hover {
+        background-color: var(--selc-repair-color);
+        border-radius: 8px;
+    }
+
+    .nav-media:hover {
+        background-color: var(--selc-media-color);
+        border-radius: 8px;
+    }
+
+    .nav-defi:hover {
+        background-color: var(--selc-defi-color);
+        border-radius: 8px;
+    }
+
+
+    .js-btn-menu {
+        display: none;
+    }
+
+    #header-btn {
+        display: block;
+    } */
+
+/*============================Version desktop du hero================*/
+/* .hero {
+        position: relative;
+    }
+
+    .hero-card {
+        padding-bottom: 16rem;
+        margin-bottom: 0;
+    }
+
+    .hero-leafi {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        padding: 0;
+    }
+
+    .card-info,
+    .impact {
+        flex-direction: row;
+    }
+
+    .hero-search,
+    .btn-scan {
+        width: 60%;
+    }
+
+    .info-defi .card-article {
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .info-defi .card-icone {
+        width: 28rem;
+        height: 28rem;
+        flex-shrink: 0;
+    }
+
+    .info-defi .card-icone img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .info-defi .card-titre {
+        padding: 1.6rem 1.6rem 0;
+        justify-content: center;
+    }
+
+    .info-defi .btn-defi {
+        margin: auto 1.6rem 1.6rem 0;
+        align-self: flex-end;
+    }
+
+    .info-impact {
+        margin: 8rem 2rem 1.6rem 2rem;
+    } */

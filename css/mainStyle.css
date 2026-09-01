@@ -1,0 +1,434 @@
+
+/*=========================================================CSS général de BASE===============================================================*/
+:root {
+    --selc-bg-color: #fafaf7;
+    --selc-bg-card: #FFFFFF;
+    --selc-brd-card: #09632A;
+    --selc-text-color: #0A0A0A;
+    --selc-linked-color: #4A5769;
+    --selc-link-color: #10569C;
+    --selc-bg-btnCTA: #4ADE80;
+    --selc-brd-btnCTA: #09632A;
+    --selc-bg-btnSEC: #F97316;
+    --selc-brd-btnSEC: #0A0A0A;
+    --selc-bg-btnTER: #4A5769;
+    --selc-brd-btnTER: #0A0A0A;
+    --selc-tri-color: rgba(9, 99, 42, 0.2);
+    --selc-depot-color: rgba(249, 115, 22, 0.2);
+    --selc-repair-color: rgba(251, 192, 45, 0.2);
+    --selc-media-color: rgba(13, 148, 136, 0.2);
+    --selc-defi-color: rgba(168, 85, 247, 0.2);
+    --selc-compte-color: rgb(16, 86, 156, 0.3);
+}
+
+html {
+    font-size: 62.5%;
+    /* 62.5% de 16px=10px => 1rem=10px sans 62% 1rem=16px ref de base */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /*pour avoir le padding et la border inclue dans la largeur que je définie pas element. Et non width + padding+boder*/
+    /*  outline: 1px solid red;   super utile pour voir toutes les decompostions du site et voir si un element est en dehors page HTML du site */
+}
+
+body {
+    background-color: var(--selc-bg-color);
+    color: var(--selc-text-color);
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+}
+
+main {
+    margin: 2.4rem;
+}
+
+h1 {
+    font-family: "poppins", sans-serif;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+h2 {
+    font-family: "poppins", sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-family: "poppins", sans-serif;
+    font-size: 1.6rem;
+    font-weight: lighter;
+}
+
+/* a{
+    color: var(--selc-link-color);
+    text-decoration: none;
+}
+
+a:visited{
+    color:var(--selc-linked-color);
+} */
+
+.btn-principal {
+    background-color: var(--selc-bg-btnCTA);
+    border: 1.5px solid var(--selc-brd-btnCTA);
+    /*pr éviter l'effet rebond au passage hover si gagne 1px de chaque côté risque d'avoir grd décalage*/
+    border-radius: 40px;
+    padding: 1rem 2rem;
+    color: var(--selc-text-color);
+    font-family: "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+    /* width: auto;
+    height: auto; */
+}
+
+.btn-principal:hover {
+    box-shadow: 0 4px 12px rgba(9, 99, 42, 0.3);
+    border-width: 2px;
+}
+
+
+/*===================================================HEADER==================================================================================*/
+header {
+    padding: 0.5em 1rem;
+    margin-bottom: 1em;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    /*permet d'éviter d'avoir le contenu qui passe au-dessus du header */
+    background-color: var(--selc-bg-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em;
+    height: 100%;
+    padding: 0.5em;
+    /* margin-bottom: 1em; */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 6rem;
+    /*standard pour un logo 40, mais trop petit pour le mien*/
+    width: auto;
+}
+
+.logo-selec,
+.logo-tri {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: "poppins", sans-serif;
+}
+
+.logo-selec {
+    color: #1E293B;
+}
+
+.logo-tri {
+    color: #10853B;
+}
+
+/*=============================================================NAVIGATION=============================================================*/
+
+#header-btn {
+    display: block;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: -100%;
+    top: 100%;
+    width: 100%;
+    background-color: var(--selc-bg-color);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: left 0.3s ease;
+    z-index: 99;
+}
+
+.nav-menu.open {
+    left: 0;
+}
+
+.nav-menu li {
+    padding: 1.2rem 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    font-family: "poppins", sans-serif;
+    font-size: 1.6rem;
+}
+
+nav a {
+    color: var(--selc-text-color);
+    text-decoration: none;
+}
+
+/*==================CSS pour avoir les couleurs background des menu ouvert===============*/
+
+.nav-menu.open .nav-tri:hover {
+    background-color: var(--selc-tri-color); border-radius: 8px ;}
+
+.nav-menu.open .nav-depot:hover {
+    background-color: var(--selc-depot-color); border-radius: 8px;}
+
+.nav-menu.open .nav-repair:hover {
+    background-color: var(--selc-repair-color); border-radius: 8px;}
+
+.nav-menu.open .nav-media:hover {
+    background-color: var(--selc-media-color);border-radius: 8px;}
+
+.nav-menu.open .nav-defi:hover {
+    background-color: var(--selc-defi-color); border-radius: 8px;}
+
+.nav-menu.open .nav-compte:hover {
+    background-color: var(--selc-compte-color); border-radius: 8px;}
+
+
+
+/*===================================================================MENU BURGER==========================================================*/
+.js-btn-menu {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+/*================ LES 3 barres span===================*/
+.js-btn-menu span {
+    position: absolute;
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: #1E293B;
+    border-radius: 3px;
+    left: 0;
+    transition: 0.25s ease-in-out;
+}
+
+/*================ Poisition des 3 barres span===================*/
+.js-btn-menu span:nth-child(1) {
+    top: 25%;
+}
+.js-btn-menu span:nth-child(2) {
+    top: 50%;
+}
+.js-btn-menu span:nth-child(3) {
+    top: 75%;
+}
+
+/*================ Animation quand menu burger ouvert ===================*/
+.js-btn-menu.open span:nth-child(1) {
+    top: 10px;
+    transform: rotate(135deg);
+}
+
+.js-btn-menu.open span:nth-child(2) {
+    opacity: 0;
+    left: -32px;
+}
+
+.js-btn-menu.open span:nth-child(3) {
+    top: 10px;
+    transform: rotate(-135deg)
+}
+
+/*=============================================== APERCU RECHERCHE ===============================================*/
+
+.search-preview {
+    display: none;
+    width: 90%;
+    margin: 0.6rem auto 0;
+    padding: 0.6rem;
+    background-color: var(--selc-bg-card);
+    border: 1px solid var(--selc-brd-card);
+    border-radius: 18px;
+    box-shadow: rgb(9, 99, 42, 0.20) 0px 12px 20px -8px;
+    position: relative;
+    z-index: 20;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.8rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--selc-text-color);
+}
+
+.preview-item:hover {
+    background-color: rgba(9, 99, 42, 0.10);
+    cursor: pointer;
+}
+
+.preview-icon {
+    flex-shrink: 0;
+    font-size: 1.8rem;
+}
+
+.preview-item strong {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: var(--selc-text-color);
+}
+
+.preview-item small {
+    display: block;
+    margin-top: 0.2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    color: #4A5769;
+}
+
+.preview-empty {
+    margin: 0;
+    padding: 0.8rem;
+    font-family: "Inter", sans-serif;
+    color: #4A5769;
+    text-align: center;
+}
+
+/*===================================================================FOOTER==========================================================*/
+footer {
+    padding: 2rem;
+    margin-top: 3.2rem;
+    background-color: rgb(74, 87, 105, 0.2);
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 2.4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+footer nav li {
+    font-family: "Inter", sans-serif;
+    font-size: 1.4rem;
+}
+
+.footer-bas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.2rem;
+    padding-top: rem;
+    border-top: solid 1px var(--selc-brd-card);
+}
+
+.rs {
+    display: flex;
+    gap: 1.6rem;
+}
+
+.rs img {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+/*==================================================================RESPONSIVE==========================================================*/
+
+@media only screen and (min-width: 992px) {
+
+    /*===================================HEADER version Desktop============================*/
+    .nav-menu {
+        flex-direction: row;
+        position: static;
+        left: auto;
+        width: auto;
+        gap: 30px;
+        background-color: transparent;
+        box-shadow: none;
+        transition: none;
+    }
+
+    .nav-menu li {
+        align-self: center;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        border-bottom: none;
+    }
+
+    /*pour le changement de couleur au survol*/
+    .nav-tri:hover {
+        background-color: var(--selc-tri-color);
+        border-radius: 8px;
+    }
+
+    .nav-depot:hover {
+        background-color: var(--selc-depot-color);
+        border-radius: 8px;
+    }
+
+    .nav-repair:hover {
+        background-color: var(--selc-repair-color);
+        border-radius: 8px;
+    }
+
+    .nav-media:hover {
+        background-color: var(--selc-media-color);
+        border-radius: 8px;
+    }
+
+    .nav-defi:hover {
+        background-color: var(--selc-defi-color);
+        border-radius: 8px;
+    }
+
+    .nav-compte{
+        display: none; 
+    }
+
+    .js-btn-menu {
+        display: none;
+    }
+
+    #header-btn {
+        display: block;
+        cursor : not-allowed; 
+        opacity: 0.85;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-preview {
+        width: 95%;
+    }
+
+    .preview-item {
+        align-items: flex-start;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche produit - SelecTri</title>
+
+    <link rel="stylesheet" href="../css/mainStyle.css">
+    <link rel="stylesheet" href="../css/consignes.css">
+
+    <link rel="icon" type="image/jpg" sizes="38x53" href="../images/identite_site/g11.jpg">
+    <link rel="apple-touch-icon" href="../images/identite_site/apple-touch-favicon.png">
+</head>
+
+<body>
+    <header>
+        <nav aria-label="navigateur-principal" class="header-nav">
+            <a href="/index.html" class="logo">
+                <img src="../images/identite_site/leafi-logo.svg" alt="Logo du site SelecTri">
+                <span> <!--fonctionne sans la classe "logo-nom" pour l'instant -->
+                    <span class="logo-selec">Selec</span><span class="logo-tri">Tri</span>
+                    <!--mettre les deux spans sur la meme ligne évite que le navigateur un interprète un retour à la ligne entre les deux élements inline-->
+                </span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-tri nav-item"><a href="/pages/consignes.html">Consignes de tri</a></li>
+                <li class="nav-depot nav-item"><a href="#">Points de dépôts</a></li>
+                <li class="nav-repair nav-item"><a href="#">Réparation</a></li>
+                <li class="nav-media nav-item"><a href="#">Médiathèque</a></li>
+                <li class="nav-defi nav-item"><a href="#">Défis</a></li>
+                <li class="nav-compte nav-item"><a href="#">Mon compte</a></li>
+            </ul>
+        <div class="header-actions">
+                <button class="btn-principal" id="header-btn" type="button" title ="Page de connexion à venir en MVC PHP-POO">Se connecter</button>
+                <!--à mettre plus tard avec JS mais pour un utilisateur connecté en version desktop, le bouton devient son avatar utilisateur-->
+                <button class="js-btn-menu" aria-label="Ouvrir la navigation mobile" aria-expanded="false"
+                    type="button">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2 style ="color:red;"><strong><em>PRESENTER COMME APERCU, SITE EN COURS DE CONSTRUCTION </em></strong></h2>
+
+        <section class="hero">
+            <div class="hero-search-row">
+                <!-- <button class="btn-back" id="btn-back" type="button" aria-label="Retour">
+                    <img src="../images/UI_icone/arrow-left.svg" alt="">
+                </button> --> <!-- Changement par rapport à la maquette, non utile ^pour l'instant-->
+                <div class="hero-search">
+                    <input type="text" id="input-search" name="search" placeholder="Emballage, produit, objet..." value=""
+                        autocomplete="off" minlength="1">
+                    <button class="btn-clear" id="btn-clear" aria-label="effacer la recherche" type="reset"
+                        aria-hidden="true">X</button>
+                    <button class="btn-search" aria-label="lancer la recherche" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="#00000"
+                            viewBox="0 0 256 256">
+                            <path
+                                d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <nav aria-label="fil d'Ariane">
+            <ol class="breadcrumb">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="consignes.html">Consignes de tri</a></li>
+                <li><span>Fiche produit</span></li>
+            </ol>
+        </nav>
+
+        <section id="ficheProduit" class="ficheProduit">
+            <!-- La fiche produit sera ajoutée ici avec JavaScript -->
+        </section>
+    </main>
+
+    <footer>
+        <nav aria-label="navigateur-secondaire">
+            <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cookies</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">CGU / Politique de confidentialité</a></li>
+            </ul>
+        </nav>
+
+        <div class="footer-bas">
+            <span class="rs">
+                <img src="../images/UI_icone/facebook-logo.svg" alt="logo de facebook">
+                <img src="../images/UI_icone/instagram-logo.svg" alt="logo d'instagram">
+                <img src="../images/UI_icone/x-logo.svg" alt="logo de réseau social X">
+            </span>
+
+            <span class="nom-site">
+                <span>&copy;2026</span>
+                <span class="logo-selec">Selec</span><span class="logo-tri">Tri</span>
+            </span>
+        </div>
+    </footer>
+
+    <script src="../data/dataSimulation.js"></script>
+    <script src="../js/ficheProduit.js"></script>
+</body>
+
+</html>

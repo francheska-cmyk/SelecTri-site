@@ -1,4 +1,3 @@
-/*Vérifier si l'unité REM peut être utilisé pour les height et width*/
 
 /*=========================================================CSS général de BASE===============================================================*/
 :root {
@@ -255,6 +254,65 @@ nav a {
     transform: rotate(-135deg)
 }
 
+
+/*=============================================== APERCU RECHERCHE ===============================================*/
+
+.search-preview {
+    display: none;
+    width: 90%;
+    margin: 0.6rem auto 0;
+    padding: 0.6rem;
+    background-color: var(--selc-bg-card);
+    border: 1px solid var(--selc-brd-card);
+    border-radius: 18px;
+    box-shadow: rgb(9, 99, 42, 0.20) 0px 12px 20px -8px;
+    position: relative;
+    z-index: 20;
+}
+
+.preview-item {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    padding: 0.8rem;
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--selc-text-color);
+}
+
+.preview-item:hover {
+    background-color: rgba(9, 99, 42, 0.10);
+    cursor: pointer;
+}
+
+.preview-icon {
+    flex-shrink: 0;
+    font-size: 1.8rem;
+}
+
+.preview-item strong {
+    display: block;
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    color: var(--selc-text-color);
+}
+
+.preview-item small {
+    display: block;
+    margin-top: 0.2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.9rem;
+    color: #4A5769;
+}
+
+.preview-empty {
+    margin: 0;
+    padding: 0.8rem;
+    font-family: "Inter", sans-serif;
+    color: #4A5769;
+    text-align: center;
+}
+
 /*===================================================================FOOTER==========================================================*/
 footer {
     padding: 2rem;
@@ -294,4 +352,72 @@ footer nav li {
 .rs img {
     width: 2.4rem;
     height: 2.4rem;
+}
+
+/*=============================================================RESPONSIVE=============================================================*/
+
+@media only screen and (min-width: 992px) {
+
+    /*===================================HEADER version Desktop============================*/
+    .nav-menu {
+        flex-direction: row;
+        position: static;
+        left: auto;
+        width: auto;
+        gap: 30px;
+        background-color: transparent;
+        box-shadow: none;
+        transition: none;
+    }
+
+    .nav-menu li {
+        align-self: center;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        border-bottom: none;
+    }
+
+    /*pour le changement de couleur au survol*/
+    .nav-tri:hover {
+        background-color: var(--selc-tri-color);
+        border-radius: 8px;
+    }
+
+    .nav-depot:hover {
+        background-color: var(--selc-depot-color);
+        border-radius: 8px;
+    }
+
+    .nav-repair:hover {
+        background-color: var(--selc-repair-color);
+        border-radius: 8px;
+    }
+
+    .nav-media:hover {
+        background-color: var(--selc-media-color);
+        border-radius: 8px;
+    }
+
+    .nav-defi:hover {
+        background-color: var(--selc-defi-color);
+        border-radius: 8px;
+    }
+
+    .js-btn-menu {
+        display: none;
+    }
+
+    #header-btn {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .search-preview {
+        width: 95%;
+    }
+
+    .preview-item {
+        align-items: flex-start;
+    }
 }

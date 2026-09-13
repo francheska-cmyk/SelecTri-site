@@ -1,0 +1,16 @@
+{
+    "require": {
+        "symfony/var-dumper": "*"
+    }, 
+    "autoload": {
+        "psr-4": {
+            "App\\": "src",
+            "Controller\\": "Controller/", 
+            "Model\\": "Model/",
+            "View\\": "View/",
+            "Utils\\":"utils/"
+        },
+        "files":[
+            "env.php"]
+    }
+}

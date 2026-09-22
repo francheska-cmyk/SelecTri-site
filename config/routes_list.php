@@ -1,2 +1,0 @@
-<?php
-//listes des routes 

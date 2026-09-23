@@ -45,6 +45,25 @@ class ViewWaste extends View
         return $this;
     }
 
+    // Associe le nom de la catégorie (ex: "Verre") à l'icône correspondante.
+    // Icône générique de secours si la catégorie n'a pas d'image dédiée.
+    private function iconePourCategorie(string $categorie): string
+    {
+        $icones = [
+            'verre'      => '/assets/images/illustrations/icone-bouteille-verre.png',
+            'plastique'  => '/assets/images/illustrations/icons8-déchets-plastiques-100.png',
+            'metal'      => '/assets/images/illustrations/icons8-boîte-de-conserve-48.png',
+            'métal'      => '/assets/images/illustrations/icons8-boîte-de-conserve-48.png',
+            'carton'     => '/assets/images/illustrations/icons8-carton-94.png',
+            'papier'     => '/assets/images/illustrations/icons8-papier-48.png',
+            'biodéchet'  => '/assets/images/illustrations/icons8-biodéchets-64.png',
+            'biodéchets' => '/assets/images/illustrations/icons8-biodéchets-64.png',
+        ];
+
+        $cle = mb_strtolower(trim($categorie));
+        return $icones[$cle] ?? '/assets/images/UI_icone/recycle.svg';
+    }
+
     private function afficherRecherche(): void
     {
         $resultats = $this->getdata() ?? [];
@@ -81,7 +100,9 @@ class ViewWaste extends View
             <div class="resultats-list">
                 <?php foreach ($resultats as $dechet): ?>
                     <a class="card-dechet-resultat" href="/fiche?id=<?= (int) $dechet['id'] ?>">
-                        <div class="categorie-icone"></div>
+                        <div class="categorie-icone">
+                            <img src="<?= htmlspecialchars($this->iconePourCategorie($dechet['categorie'])) ?>" alt="Icône <?= htmlspecialchars($dechet['categorie']) ?>">
+                        </div>
                         <div class="card-titre">
                             <h2><?= htmlspecialchars($dechet['categorie']) ?></h2>
                             <h3><?= htmlspecialchars($dechet['name']) ?></h3>
@@ -112,7 +133,9 @@ class ViewWaste extends View
     <?php if (!empty($dechet)): ?>
         <div class="ficheProduit-card">
             <div class="ficheProduit-header">
-                <div class="ficheProduit-icone"></div>
+                <div class="ficheProduit-icone">
+                    <img src="<?= htmlspecialchars($this->iconePourCategorie($dechet['categorie'] ?? '')) ?>" alt="Icône <?= htmlspecialchars($dechet['categorie'] ?? '') ?>">
+                </div>
                 <div>
                     <span class="ficheProduit-categorie"><?= htmlspecialchars($dechet['categorie']) ?></span>
                     <h1><?= htmlspecialchars($dechet['name']) ?></h1>

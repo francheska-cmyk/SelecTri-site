@@ -6,18 +6,17 @@ use App\Models\ModelWasteType;
 use App\Models\ModelWasteCategory;
 use App\Models\ModelInstruction;
 
-
 class ControllerWaste extends Controller
 {
     public function searchWaste(): void{
         $term = trim($_GET['q'] ?? '');
-
-        /** @var ModelWasteType $model */
         $model = $this->getModel();
         $resultats = $term !== '' ? $model->search($term) : [];
 
         $this->getView()->displaySearchResults($resultats, $term);
     }
+
+            /** @var ModelWasteType $model */
 
     public function displayInstruction(int $idWasteType): void{
         /** @var ModelWasteType $wasteTypeModel */
